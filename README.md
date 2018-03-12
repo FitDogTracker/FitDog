@@ -20,4 +20,8 @@ Optional User Stories:
 - [ ] User can schedule notification to remind them to walk their dog.
 - [ ] User can see suggestions on how much to walk their dog based on age and breed.
 
+## Wireframes
 <img src='FitDog.png' title='Wireframes' width='' alt='Wireframes' />
+
+## Database Schema
+<img src='FitDog_Database.png' title='Database Schema' width='' alt='Database Schema' />
