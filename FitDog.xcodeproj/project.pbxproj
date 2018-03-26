@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43F1992020699AD0004786B3 /* DogInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F1991F20699AD0004786B3 /* DogInfoViewController.swift */; };
 		43F2C0D420423D730006E5F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F2C0D320423D730006E5F4 /* AppDelegate.swift */; };
 		43F2C0D620423D730006E5F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F2C0D520423D730006E5F4 /* ViewController.swift */; };
 		43F2C0D920423D730006E5F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C0D720423D730006E5F4 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43F1991F20699AD0004786B3 /* DogInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogInfoViewController.swift; sourceTree = "<group>"; };
 		43F2C0D020423D730006E5F4 /* FitDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F2C0D320423D730006E5F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43F2C0D520423D730006E5F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,9 +76,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43F198A020573983004786B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		43F198A12057398E004786B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		43F198A220573996004786B3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				43F1991F20699AD0004786B3 /* DogInfoViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		43F2C0C720423D730006E5F4 = {
 			isa = PBXGroup;
 			children = (
+				43F198A220573996004786B3 /* ViewControllers */,
+				43F198A12057398E004786B3 /* Views */,
+				43F198A020573983004786B3 /* Models */,
 				43F2C0D220423D730006E5F4 /* FitDog */,
 				43F2C0E720423D730006E5F4 /* FitDogTests */,
 				43F2C0F220423D730006E5F4 /* FitDogUITests */,
@@ -261,6 +288,7 @@
 			files = (
 				43F2C0D620423D730006E5F4 /* ViewController.swift in Sources */,
 				43F2C0D420423D730006E5F4 /* AppDelegate.swift in Sources */,
+				43F1992020699AD0004786B3 /* DogInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
