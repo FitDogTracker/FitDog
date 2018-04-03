@@ -80,6 +80,9 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
             //print error
             return
         }
+        else{
+            dogName = nameTextField.text
+        }
         if(dogImage == nil){
             //print error message
             return
@@ -88,8 +91,14 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
             //print error message or pick random color
             return
         }
-        Dog.SaveDog(image: dogImage, name: dogName, color: dogColor, withCompletion: <#T##PFBooleanResultBlock?##PFBooleanResultBlock?##(Bool, Error?) -> Void#>)
-        performSegue(withIdentifier: "dogInfoSegue", sender: nil)
+        Dog.SaveDog(image: dogImage, name: dogName, color: dogColor) { (isComplete, error) in
+            if(error != nil){
+                print(error?.localizedDescription)
+            }
+            else{
+                self.performSegue(withIdentifier: "dogInfoSegue", sender: nil)
+            }
+        }
     }
 
 }
