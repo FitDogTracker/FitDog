@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FD4805EE76B331940983C2E /* Pods_FitDogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F65258EF02D5E74AD6CBD82 /* Pods_FitDogUITests.framework */; };
 		434AE71D2072E97E00AA8F1F /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434AE71C2072E97E00AA8F1F /* DayCell.swift */; };
 		43F1992020699AD0004786B3 /* DogInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F1991F20699AD0004786B3 /* DogInfoViewController.swift */; };
 		43F199222069A6E5004786B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F199212069A6E5004786B3 /* HomeViewController.swift */; };
@@ -22,6 +23,8 @@
 		6EF8B1A32069AEA700EB833F /* SelectDogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8B1A22069AEA700EB833F /* SelectDogCell.swift */; };
 		6EF8B1A52069B0A800EB833F /* SelectDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8B1A42069B0A800EB833F /* SelectDogViewController.swift */; };
 		6EF8B1A72069BA7300EB833F /* CurrentWalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8B1A62069BA7300EB833F /* CurrentWalkViewController.swift */; };
+		B21CA7554FD547630072CA7F /* Pods_FitDog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57CA1AC809B525FF3206A019 /* Pods_FitDog.framework */; };
+		D61B8A0687A3C3EA75F21F1A /* Pods_FitDogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB3A191222D9A3F4AEF4872 /* Pods_FitDogTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CB3A191222D9A3F4AEF4872 /* Pods_FitDogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitDogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E4FFE26C42391FE262639D8 /* Pods-FitDogUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitDogUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitDogUITests/Pods-FitDogUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0F65258EF02D5E74AD6CBD82 /* Pods_FitDogUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitDogUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D9E0CB4CAEE395E412FEE58 /* Pods-FitDog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitDog.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitDog/Pods-FitDog.release.xcconfig"; sourceTree = "<group>"; };
 		434AE71C2072E97E00AA8F1F /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		43F1991F20699AD0004786B3 /* DogInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogInfoViewController.swift; sourceTree = "<group>"; };
 		43F199212069A6E5004786B3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -60,9 +67,14 @@
 		43F2C0EF20423D730006E5F4 /* FitDogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitDogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F2C0F320423D730006E5F4 /* FitDogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitDogUITests.swift; sourceTree = "<group>"; };
 		43F2C0F520423D730006E5F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57CA1AC809B525FF3206A019 /* Pods_FitDog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitDog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58B884FDC2E8BDD9159F22B5 /* Pods-FitDogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitDogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitDogTests/Pods-FitDogTests.release.xcconfig"; sourceTree = "<group>"; };
 		6EF8B1A22069AEA700EB833F /* SelectDogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDogCell.swift; sourceTree = "<group>"; };
 		6EF8B1A42069B0A800EB833F /* SelectDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDogViewController.swift; sourceTree = "<group>"; };
 		6EF8B1A62069BA7300EB833F /* CurrentWalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWalkViewController.swift; sourceTree = "<group>"; };
+		A32F4735502A10B75C347FAD /* Pods-FitDog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitDog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitDog/Pods-FitDog.debug.xcconfig"; sourceTree = "<group>"; };
+		BCCAB04E11158F4022ACA88A /* Pods-FitDogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitDogTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitDogTests/Pods-FitDogTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E55B724DB56D396B2F558050 /* Pods-FitDogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitDogUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitDogUITests/Pods-FitDogUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B21CA7554FD547630072CA7F /* Pods_FitDog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D61B8A0687A3C3EA75F21F1A /* Pods_FitDogTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +98,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FD4805EE76B331940983C2E /* Pods_FitDogUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3820D1DD77E7EA954DCB92B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57CA1AC809B525FF3206A019 /* Pods_FitDog.framework */,
+				0CB3A191222D9A3F4AEF4872 /* Pods_FitDogTests.framework */,
+				0F65258EF02D5E74AD6CBD82 /* Pods_FitDogUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		43F198A020573983004786B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +154,8 @@
 				43F2C0E720423D730006E5F4 /* FitDogTests */,
 				43F2C0F220423D730006E5F4 /* FitDogUITests */,
 				43F2C0D120423D730006E5F4 /* Products */,
+				5EF5E414BA591263AED548F4 /* Pods */,
+				3820D1DD77E7EA954DCB92B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +200,19 @@
 			path = FitDogUITests;
 			sourceTree = "<group>";
 		};
+		5EF5E414BA591263AED548F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A32F4735502A10B75C347FAD /* Pods-FitDog.debug.xcconfig */,
+				1D9E0CB4CAEE395E412FEE58 /* Pods-FitDog.release.xcconfig */,
+				BCCAB04E11158F4022ACA88A /* Pods-FitDogTests.debug.xcconfig */,
+				58B884FDC2E8BDD9159F22B5 /* Pods-FitDogTests.release.xcconfig */,
+				E55B724DB56D396B2F558050 /* Pods-FitDogUITests.debug.xcconfig */,
+				0E4FFE26C42391FE262639D8 /* Pods-FitDogUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,9 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43F2C0F820423D730006E5F4 /* Build configuration list for PBXNativeTarget "FitDog" */;
 			buildPhases = (
+				1D40B1193D25B9F94DF851DC /* [CP] Check Pods Manifest.lock */,
 				43F2C0CC20423D730006E5F4 /* Sources */,
 				43F2C0CD20423D730006E5F4 /* Frameworks */,
 				43F2C0CE20423D730006E5F4 /* Resources */,
+				02C7C4C3013C4D0236C6FF8A /* [CP] Embed Pods Frameworks */,
+				59BF3F117A5B7EE790F6945D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,9 +240,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43F2C0FB20423D730006E5F4 /* Build configuration list for PBXNativeTarget "FitDogTests" */;
 			buildPhases = (
+				3148B7DB80C862E2CC581104 /* [CP] Check Pods Manifest.lock */,
 				43F2C0E020423D730006E5F4 /* Sources */,
 				43F2C0E120423D730006E5F4 /* Frameworks */,
 				43F2C0E220423D730006E5F4 /* Resources */,
+				5795715F5AFAC8394106A1B4 /* [CP] Embed Pods Frameworks */,
+				D29EDCAD70451BDB33F0C6B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -215,9 +261,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43F2C0FE20423D730006E5F4 /* Build configuration list for PBXNativeTarget "FitDogUITests" */;
 			buildPhases = (
+				2E88827A3A831FBD92A7B28C /* [CP] Check Pods Manifest.lock */,
 				43F2C0EB20423D730006E5F4 /* Sources */,
 				43F2C0EC20423D730006E5F4 /* Frameworks */,
 				43F2C0ED20423D730006E5F4 /* Resources */,
+				60D9634F264B765E2F323A31 /* [CP] Embed Pods Frameworks */,
+				2EB386D268E8DE4BED0D6D96 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -301,6 +350,158 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02C7C4C3013C4D0236C6FF8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FitDog/Pods-FitDog-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FitDog/Pods-FitDog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1D40B1193D25B9F94DF851DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FitDog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E88827A3A831FBD92A7B28C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FitDogUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EB386D268E8DE4BED0D6D96 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FitDogUITests/Pods-FitDogUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3148B7DB80C862E2CC581104 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FitDogTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5795715F5AFAC8394106A1B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FitDogTests/Pods-FitDogTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59BF3F117A5B7EE790F6945D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FitDog/Pods-FitDog-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60D9634F264B765E2F323A31 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FitDogUITests/Pods-FitDogUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D29EDCAD70451BDB33F0C6B9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FitDogTests/Pods-FitDogTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		43F2C0CC20423D730006E5F4 /* Sources */ = {
@@ -480,6 +681,7 @@
 		};
 		43F2C0F920423D730006E5F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A32F4735502A10B75C347FAD /* Pods-FitDog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -494,6 +696,7 @@
 		};
 		43F2C0FA20423D730006E5F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D9E0CB4CAEE395E412FEE58 /* Pods-FitDog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -508,6 +711,7 @@
 		};
 		43F2C0FC20423D730006E5F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCCAB04E11158F4022ACA88A /* Pods-FitDogTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -524,6 +728,7 @@
 		};
 		43F2C0FD20423D730006E5F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58B884FDC2E8BDD9159F22B5 /* Pods-FitDogTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -540,6 +745,7 @@
 		};
 		43F2C0FF20423D730006E5F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E55B724DB56D396B2F558050 /* Pods-FitDogUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -555,6 +761,7 @@
 		};
 		43F2C10020423D730006E5F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E4FFE26C42391FE262639D8 /* Pods-FitDogUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

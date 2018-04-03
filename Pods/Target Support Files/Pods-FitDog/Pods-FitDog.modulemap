@@ -1,0 +1,6 @@
+framework module Pods_FitDog {
+  umbrella header "Pods-FitDog-umbrella.h"
+
+  export *
+  module * { export * }
+}
