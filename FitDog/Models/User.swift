@@ -7,10 +7,10 @@
 //
 
 import Foundation
-//import Parse
+import Parse
 
-class User/*: PFObject, PFSubclassing*/ {
-    @NSManaged var dog: [String]
+class User: PFObject, PFSubclassing {
+    @NSManaged var dog: [Dog]
     
     class func parseClassName() -> String {
         return "UserDog"

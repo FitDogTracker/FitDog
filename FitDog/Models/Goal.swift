@@ -7,19 +7,20 @@
 //
 
 import Foundation
-//import Parse
+import Parse
 
-class Goal/*: PFObject, PFSubclassing*/ {
-    //@NSManaged var dog : Dog
+class Goal: PFObject, PFSubclassing {
+    @NSManaged var dog: Dog
     @NSManaged var progress: Double
-    @NSManaged var distance: URL //PFFile
+    @NSManaged var distance: Double
     @NSManaged var frequency: String
     @NSManaged var startDate: Date
     @NSManaged var endDate: Date
     
-    
     class func parseClassName() -> String {
-        var col = 
         return "Goal"
     }
+    
+    
+    
 }

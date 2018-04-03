@@ -7,15 +7,37 @@
 //
 
 import Foundation
-//import Parse
+import Parse
 
-class Dog/*: PFObject, PFSubclassing*/ {
+class Dog: PFObject, PFSubclassing {
     @NSManaged var name: String
     @NSManaged var color: String
-    @NSManaged var photo: URL //PFFile
-    
+    @NSManaged var photo: PFFile
     
     class func parseClassName() -> String {
         return "Dog"
+    }
+    
+    class func SaveDog(image: UIImage?, name: String?, color: String?, withCompletion completion: PFBooleanResultBlock?) {
+        // use subclass approach
+        let dog = Dog()
+        
+        // Add relevant fields to the object
+        dog.photo = getPFFileFromImage(image: image)! // PFFile column type
+        dog.color = color!
+        dog.name = name!
+        // Save object (following function will save the object in Parse asynchronously)
+        dog.saveInBackground(block: completion)
+    }
+    
+    class func getPFFileFromImage(image: UIImage?) -> PFFile? {
+        // check if image is not nil
+        if let image = image {
+            // get image data and check if that is not nil
+            if let imageData = UIImagePNGRepresentation(image) {
+                return PFFile(name: "image.png", data: imageData)
+            }
+        }
+        return nil
     }
 }
