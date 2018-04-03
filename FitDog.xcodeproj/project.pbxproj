@@ -146,8 +146,6 @@
 		43F2C0C720423D730006E5F4 = {
 			isa = PBXGroup;
 			children = (
-				43F198A220573996004786B3 /* ViewControllers */,
-				43F198A12057398E004786B3 /* Views */,
 				43F2C0D220423D730006E5F4 /* FitDog */,
 				43F2C0E720423D730006E5F4 /* FitDogTests */,
 				43F2C0F220423D730006E5F4 /* FitDogUITests */,
@@ -170,6 +168,8 @@
 		43F2C0D220423D730006E5F4 /* FitDog */ = {
 			isa = PBXGroup;
 			children = (
+				43F198A220573996004786B3 /* ViewControllers */,
+				43F198A12057398E004786B3 /* Views */,
 				6EF8B1B8207307D500EB833F /* Models */,
 				43F2C0D320423D730006E5F4 /* AppDelegate.swift */,
 				43F2C0D520423D730006E5F4 /* ViewController.swift */,
@@ -370,11 +370,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-FitDog/Pods-FitDog-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftHSVColorPicker/SwiftHSVColorPicker.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHSVColorPicker.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

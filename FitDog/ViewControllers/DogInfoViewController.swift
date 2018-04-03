@@ -16,6 +16,9 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
     var dogImage: UIImage?
     var dogColor: String?
     var picker: UIImagePickerController!
+
+    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var logoImageView: UIImageView!
     
     override func viewDidLoad() {
         picker = UIImagePickerController()
@@ -31,6 +34,14 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        logoImageView.layer.cornerRadius = logoImageView.frame.height/2
+        logoImageView.clipsToBounds = true
+        
+        profileImageView.layer.borderWidth = 10
+        profileImageView.layer.masksToBounds = false
+        profileImageView.layer.borderColor = UIColor.white.cgColor
+        profileImageView.layer.cornerRadius = profileImageView.frame.height/2
+        profileImageView.clipsToBounds = true
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
@@ -53,8 +64,11 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func didTapColor(_ sender: Any) {
-        dogColor = "red"
-        profileImageView.layer.borderColor = UIColor(named: dogColor!)?.cgColor
+        //TODO: figure out how to store and retrieve colors
+        dogColor = "#FF0000FF"
+        var color = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1).cgColor
+        profileImageView.layer.borderColor = color
+        colorView.layer.backgroundColor = color
     }
     
     @IBAction func didTapAddPhoto(_ sender: Any) {
@@ -74,6 +88,7 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
             //print error message or pick random color
             return
         }
+        Dog.SaveDog(image: dogImage, name: dogName, color: dogColor, withCompletion: <#T##PFBooleanResultBlock?##PFBooleanResultBlock?##(Bool, Error?) -> Void#>)
         performSegue(withIdentifier: "dogInfoSegue", sender: nil)
     }
 
