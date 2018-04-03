@@ -4,14 +4,17 @@ PODS:
     - Parse/Core (= 1.16.0)
   - Parse/Core (1.16.0):
     - Bolts/Tasks (~> 1.9)
+  - SwiftHSVColorPicker (1.1.1)
 
 DEPENDENCIES:
   - Parse
+  - SwiftHSVColorPicker
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Parse: 5b36dc2c2f0a2fd82a257ae018bc3d68cf2c24e7
+  SwiftHSVColorPicker: 69c9028dea168e0f8ee2439d31a899cf1df95678
 
-PODFILE CHECKSUM: 4595bfea7a193ec01ee54deca1a2fed396100a1e
+PODFILE CHECKSUM: 32c8c07c3293c857183f10abbcba1c3f3d4fa7da
 
 COCOAPODS: 1.4.0
