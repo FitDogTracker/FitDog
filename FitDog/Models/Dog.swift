@@ -27,8 +27,11 @@ class Dog: PFObject, PFSubclassing {
         dog.photo = getPFFileFromImage(image: image)! // PFFile column type
         dog.color = color!
         dog.name = name!
+        let usr = PFUser.current()!
+        
         // Save object (following function will save the object in Parse asynchronously)
-        //dog.saveInBackground(block: completion)
+        dog.saveInBackground(block: completion)
+        //completion?(true,nil);
     }
     
     class func getPFFileFromImage(image: UIImage?) -> PFFile? {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -21,6 +22,9 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var logoImageView: UIImageView!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        print(PFUser.current())
+        
         picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
@@ -31,9 +35,7 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
             print("Camera 🚫 available so we will use photo library instead")
             picker.sourceType = .photoLibrary
         }
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+     
         logoImageView.layer.cornerRadius = logoImageView.frame.height/2
         logoImageView.clipsToBounds = true
         
@@ -91,12 +93,38 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
             //print error message or pick random color
             return
         }
-        Dog.SaveDog(image: dogImage, name: dogName, color: dogColor) { (isComplete, error) in
-            if(error != nil){
-                print(error?.localizedDescription)
+        var dog = Dog()
+        //TODO: abstraction!
+        dog.photo = Dog.getPFFileFromImage(image: dogImage)! // PFFile column type
+        dog.color = dogColor!
+        dog.name = dogName!
+        
+        dog.saveInBackground { (isComplete, err) in
+            if(isComplete){
+                dog.fetchInBackground(block: { (dbDog, err) in
+                    if(err == nil){
+                        dog = dbDog as! Dog
+                        let usr = PFUser.current()!
+                        usr.add(dog, forKey: "dogs")
+                        usr.saveInBackground()
+                    }
+                    else{
+                        print(err?.localizedDescription)
+                    }
+                })
             }
             else{
+                print(err?.localizedDescription)
+            }
+        }
+        
+        Dog.SaveDog(image: dogImage, name: dogName, color: dogColor) { (isComplete, error) in
+            if(isComplete){
+                
                 self.performSegue(withIdentifier: "dogInfoSegue", sender: nil)
+            }
+            else{
+                print(error?.localizedDescription)
             }
         }
     }

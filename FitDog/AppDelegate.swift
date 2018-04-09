@@ -21,6 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.clientKey = "csumb123"  // set to nil assuming you have not set clientKey
                 configuration.server = "https://fit-dog.herokuapp.com/parse"
             }))
+        
+        PFUser.enableAutomaticUser()
+        let usr = PFUser.current()!
+        usr.incrementKey("RunCount")
+        usr.saveInBackground()
         return true
     }
 
