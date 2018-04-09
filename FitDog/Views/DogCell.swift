@@ -7,14 +7,26 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class DogCell: UITableViewCell {
 
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileImageView: PFImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var progressBackgroundView: UIView!
     @IBOutlet weak var progressForegroundView: UIView!
     @IBOutlet weak var completionLabel: UILabel!
+    
+    var dog: PFObject! {
+        didSet {
+            self.profileImageView.file = dog["photo"] as? PFFile
+            self.profileImageView.loadInBackground()
+            self.nameLabel.text = dog["name"] as? String
+            self.progressBackgroundView.backgroundColor = UIColor .gray
+            self.progressForegroundView.backgroundColor = dog["color"] as? UIColor
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

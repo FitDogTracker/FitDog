@@ -17,7 +17,6 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
     var dogColor: String?
     var picker: UIImagePickerController!
 
-    @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var logoImageView: UIImageView!
     
     override func viewDidLoad() {
@@ -68,7 +67,6 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
         dogColor = "#FF0000FF"
         var color = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1).cgColor
         profileImageView.layer.borderColor = color
-        colorView.layer.backgroundColor = color
     }
     
     @IBAction func didTapAddPhoto(_ sender: Any) {
@@ -91,7 +89,7 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
             //print error message or pick random color
             return
         }
-        Dog.SaveDog(image: dogImage, name: dogName, color: dogColor) { (isComplete, error) in
+        Dog.SaveDog(image: profileImageView.image, name: nameTextField.text, color: dogColor) { (isComplete, error) in
             if(error != nil){
                 print(error?.localizedDescription)
             }
