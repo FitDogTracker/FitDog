@@ -28,7 +28,7 @@ class Dog: PFObject, PFSubclassing {
         dog.color = color!
         dog.name = name!
         // Save object (following function will save the object in Parse asynchronously)
-        //dog.saveInBackground(block: completion)
+        dog.saveInBackground(block: completion)
     }
     
     class func getPFFileFromImage(image: UIImage?) -> PFFile? {
