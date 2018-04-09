@@ -21,13 +21,14 @@ class Dog: PFObject, PFSubclassing {
     class func SaveDog(image: UIImage?, name: String?, color: String?, withCompletion completion: PFBooleanResultBlock?) {
         // use subclass approach
         let dog = Dog()
-        
+        print("id")
+        print(dog.objectId)
         // Add relevant fields to the object
         dog.photo = getPFFileFromImage(image: image)! // PFFile column type
         dog.color = color!
         dog.name = name!
         // Save object (following function will save the object in Parse asynchronously)
-        dog.saveInBackground(block: completion)
+        //dog.saveInBackground(block: completion)
     }
     
     class func getPFFileFromImage(image: UIImage?) -> PFFile? {
