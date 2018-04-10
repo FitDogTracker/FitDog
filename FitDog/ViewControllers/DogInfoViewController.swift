@@ -93,37 +93,12 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
             //print error message or pick random color
             return
         }
-        var dog = Dog()
-        //TODO: abstraction!
-        dog.photo = Dog.getPFFileFromImage(image: dogImage)! // PFFile column type
-        dog.color = dogColor!
-        dog.name = dogName!
-        
-        dog.saveInBackground { (isComplete, err) in
-            if(isComplete){
-                dog.fetchInBackground(block: { (dbDog, err) in
-                    if(err == nil){
-                        dog = dbDog as! Dog
-                        let usr = PFUser.current()!
-                        usr.add(dog, forKey: "dogs")
-                        usr.saveInBackground()
-                    }
-                    else{
-                        print(err?.localizedDescription)
-                    }
-                })
-            }
-            else{
-                print(err?.localizedDescription)
-            }
-        }
         
         Dog.SaveDog(image: dogImage, name: dogName, color: dogColor) { (isComplete, error) in
             if(isComplete){
-                
                 self.performSegue(withIdentifier: "dogInfoSegue", sender: nil)
             }
-            else{
+            if(error != nil){
                 print(error?.localizedDescription)
             }
         }

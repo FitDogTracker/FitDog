@@ -26,6 +26,7 @@
 		6EF8B1BA2073083900EB833F /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8B1B92073083900EB833F /* Dog.swift */; };
 		6EF8B1BC2073084400EB833F /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8B1BB2073084400EB833F /* Goal.swift */; };
 		6EF8B1BE2073085000EB833F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8B1BD2073085000EB833F /* User.swift */; };
+		6EF8B1C1207C3B9200EB833F /* Date+NextWeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8B1C0207C3B9200EB833F /* Date+NextWeekDay.swift */; };
 		B21CA7554FD547630072CA7F /* Pods_FitDog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57CA1AC809B525FF3206A019 /* Pods_FitDog.framework */; };
 		D61B8A0687A3C3EA75F21F1A /* Pods_FitDogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB3A191222D9A3F4AEF4872 /* Pods_FitDogTests.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		6EF8B1B92073083900EB833F /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		6EF8B1BB2073084400EB833F /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		6EF8B1BD2073085000EB833F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6EF8B1C0207C3B9200EB833F /* Date+NextWeekDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+NextWeekDay.swift"; sourceTree = "<group>"; };
 		A32F4735502A10B75C347FAD /* Pods-FitDog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitDog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitDog/Pods-FitDog.debug.xcconfig"; sourceTree = "<group>"; };
 		BCCAB04E11158F4022ACA88A /* Pods-FitDogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitDogTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitDogTests/Pods-FitDogTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E55B724DB56D396B2F558050 /* Pods-FitDogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitDogUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitDogUITests/Pods-FitDogUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				43F2C0DA20423D730006E5F4 /* Assets.xcassets */,
 				43F2C0DC20423D730006E5F4 /* LaunchScreen.storyboard */,
 				43F2C0DF20423D730006E5F4 /* Info.plist */,
+				6EF8B1BF207C3B2F00EB833F /* Extensions */,
 			);
 			path = FitDog;
 			sourceTree = "<group>";
@@ -220,6 +223,14 @@
 				6EF8B1B92073083900EB833F /* Dog.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6EF8B1BF207C3B2F00EB833F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6EF8B1C0207C3B9200EB833F /* Date+NextWeekDay.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,6 +541,7 @@
 				6EF8B1A72069BA7300EB833F /* CurrentWalkViewController.swift in Sources */,
 				43F2C0D420423D730006E5F4 /* AppDelegate.swift in Sources */,
 				43F199242069A89A004786B3 /* DogCell.swift in Sources */,
+				6EF8B1C1207C3B9200EB833F /* Date+NextWeekDay.swift in Sources */,
 				43F1992020699AD0004786B3 /* DogInfoViewController.swift in Sources */,
 				43F199222069A6E5004786B3 /* HomeViewController.swift in Sources */,
 			);
