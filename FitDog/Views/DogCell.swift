@@ -20,6 +20,9 @@ class DogCell: UITableViewCell {
     
     var dog: PFObject! {
         didSet {
+            profileImageView.layer.masksToBounds = false
+            profileImageView.layer.cornerRadius = profileImageView.frame.height/2
+            profileImageView.clipsToBounds = true
             self.profileImageView.file = dog["photo"] as? PFFile
             self.profileImageView.loadInBackground()
             self.nameLabel.text = dog["name"] as? String
