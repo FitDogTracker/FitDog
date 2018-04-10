@@ -65,6 +65,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? DetailViewController {
             let cell = sender as! DogCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
             let image = cell.profileImageView.image
             destination.photoImage = image
         }
