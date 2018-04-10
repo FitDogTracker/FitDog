@@ -22,7 +22,6 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(PFUser.current())
         
         picker = UIImagePickerController()
         picker.delegate = self

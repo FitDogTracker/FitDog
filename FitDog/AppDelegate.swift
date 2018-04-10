@@ -23,9 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }))
         
         PFUser.enableAutomaticUser()
-        let usr = PFUser.current()!
-        usr.incrementKey("RunCount")
-        usr.saveInBackground()
+        PFUser.current()!.saveInBackground()
+        let dogs = PFUser.current()?.value(forKey: "dogs") as? [Dog]
+        
+        if( dogs != nil  && (dogs!.count > 0)){
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            //View controller currently being set in the Storyboard as default will be overridden
+            window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
+        }
+        
+        
         return true
     }
 

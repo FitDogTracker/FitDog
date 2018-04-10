@@ -84,7 +84,7 @@
         <!--Tracker-->
         <scene sceneID="RlR-yr-zRC">
             <objects>
-                <viewController title="Tracker" id="SJg-u8-rjM" customClass="HomeViewController" customModule="FitDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="Tracker" id="SJg-u8-rjM" customClass="HomeViewController" customModule="FitDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ln0-HD-MxI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
