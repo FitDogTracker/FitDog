@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -46,15 +47,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc func fetchPosts(refresh: UIRefreshControl){
-        let query = Dog.query()
-        query?.findObjectsInBackground(block: { (posts, error) in
-            if(posts != nil){
-                self.dogs = posts as! [Dog]
-                self.dogTableView.reloadData()
-                refresh.endRefreshing()
-            } else{
-                print(error?.localizedDescription as Any)
+        dogs = PFUser.current()?.value(forKey: "dogs") as! [Dog]
+        
+        //load dog data from pointers within the user object
+        for dog in dogs{
+            do{
+                try dog.fetchIfNeeded()
             }
-        })
+            catch {
+                print("error fetching dog data")
+            }
+        }
+        dogTableView.reloadData()
+        refresh.endRefreshing()
     }
 }
