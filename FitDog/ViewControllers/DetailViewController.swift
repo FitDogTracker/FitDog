@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class DetailViewController: UIViewController {
 
@@ -23,10 +25,18 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var sundayView: UIView!
     @IBOutlet weak var weeklyTableView: UITableView!
     
+    var dog: Dog!
+    var photoImage: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        profileImageView.layer.masksToBounds = false
+        profileImageView.layer.cornerRadius = profileImageView.frame.height/2
+        profileImageView.clipsToBounds = true
+        profileImageView.image = photoImage
+        
     }
 
     override func didReceiveMemoryWarning() {

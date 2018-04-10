@@ -61,4 +61,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         dogTableView.reloadData()
         refresh.endRefreshing()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailViewController {
+            let cell = sender as! DogCell
+            let image = cell.profileImageView.image
+            destination.photoImage = image
+        }
+    }
 }

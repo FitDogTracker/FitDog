@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if( dogs != nil  && (dogs!.count > 0)){
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             //View controller currently being set in the Storyboard as default will be overridden
-            window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
+            window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
         }
         
         
