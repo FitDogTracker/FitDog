@@ -8,6 +8,7 @@ target 'FitDog' do
   # Pods for FitDog
   pod 'Parse'
   pod 'SwiftHSVColorPicker'
+  pod 'ParseUI'
 
   target 'FitDogTests' do
     inherit! :search_paths
