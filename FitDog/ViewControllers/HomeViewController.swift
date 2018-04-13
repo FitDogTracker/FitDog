@@ -72,7 +72,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func didTapAddDog(sender:UIButton){
         print("user tapped add dog button!")
-        //self.performSegue(withIdentifier: "HomeViewToDogInfoSegue", sender: nil)
+        self.performSegue(withIdentifier: "HomeViewToDogInfoSegue", sender: nil)
     }
     
     func makeFooterAddDogButton() -> UIButton{
