@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import CoreLocation
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.clientKey = "csumb123"  // set to nil assuming you have not set clientKey
                 configuration.server = "https://fit-dog.herokuapp.com/parse"
             }))
+        
+        //DistanceTracker.shared()
         
         PFUser.enableAutomaticUser()
         PFUser.current()!.saveInBackground()

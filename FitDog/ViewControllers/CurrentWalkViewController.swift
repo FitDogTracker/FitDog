@@ -10,12 +10,19 @@ import UIKit
 
 class CurrentWalkViewController: UIViewController {
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var goalLabel: UILabel!
+    @IBOutlet weak var walkImageView: UIImageView!
+    @IBOutlet weak var backgroundProgressView: UIView!
+    @IBOutlet weak var foregroundProgressView: UIView!
     @IBOutlet weak var currentWalkersCollectionView: UICollectionView!
+    var dogs: [Dog] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,16 +31,6 @@ class CurrentWalkViewController: UIViewController {
     }
     
     @IBAction func didTapEndWalk(_ sender: Any) {
+        
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -173,7 +173,7 @@
                                     <color key="titleColor" red="0.50495871113989632" green="0.3517786888009401" blue="0.25047169418792287" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTapStartWalk:" destination="SJg-u8-rjM" eventType="touchUpInside" id="lId-sT-H6G"/>
+                                    <action selector="didTapStartWalk:" destination="SJg-u8-rjM" eventType="touchUpInside" id="XRa-LI-ZQx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -183,7 +183,7 @@
                     <navigationItem key="navigationItem" id="cAv-dS-Bie"/>
                     <connections>
                         <outlet property="dogTableView" destination="Mbv-PT-bg2" id="2bU-WO-rVG"/>
-                        <segue destination="d2O-k8-RS4" kind="show" id="wCu-q1-9G9"/>
+                        <segue destination="d2O-k8-RS4" kind="show" identifier="SelectDogSegue" id="wCu-q1-9G9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5DP-nB-TPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -207,10 +207,10 @@
                                     <color key="titleColor" red="0.50495871110000001" green="0.35177868880000002" blue="0.25047169419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTapGo:" destination="d2O-k8-RS4" eventType="touchUpInside" id="lgQ-qy-YxJ"/>
+                                    <segue destination="MDY-fM-cqm" kind="show" identifier="CurrentWalkSegue" id="IsE-gf-t5i"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AHD-gW-jqs">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AHD-gW-jqs">
                                 <rect key="frame" x="0.0" y="64" width="375" height="483"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -226,10 +226,6 @@
                                                     <rect key="frame" x="15" y="32" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29I-45-ufn">
-                                                    <rect key="frame" x="85" y="32" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Abby" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRN-rp-9eh">
                                                     <rect key="frame" x="123" y="64" width="237" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -237,6 +233,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="29I-45-ufn">
+                                                    <rect key="frame" x="98" y="21" width="35" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -271,11 +271,6 @@
                                 <rect key="frame" x="137" y="116" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CS4-DK-pC6">
-                                <rect key="frame" x="215" y="186" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Edit"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uB1-p6-Xdb">
                                 <rect key="frame" x="124" y="224" width="127" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -463,13 +458,13 @@
         <!--Current Walk View Controller-->
         <scene sceneID="Ymc-2T-MoO">
             <objects>
-                <viewController id="MDY-fM-cqm" customClass="CurrentWalkViewController" customModule="FitDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrentWalkViewController" id="MDY-fM-cqm" customClass="CurrentWalkViewController" customModule="FitDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Md0-pe-sfD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zO3-Yy-o4E">
-                                <rect key="frame" x="0.0" y="601" width="375" height="66"/>
+                                <rect key="frame" x="1" y="554" width="375" height="113"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.51851036890000002" green="0.81091491869999999" blue="0.86081201419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
@@ -481,7 +476,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wmF-a1-nnV">
-                                <rect key="frame" x="0.0" y="505" width="375" height="88"/>
+                                <rect key="frame" x="0.0" y="461" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zqE-xY-Znh">
@@ -515,7 +510,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Walkers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fih-5b-MJm">
-                                <rect key="frame" x="0.0" y="476" width="123" height="21"/>
+                                <rect key="frame" x="0.0" y="432" width="123" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -535,17 +530,17 @@
                                 <rect key="frame" x="153" y="246" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.2 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVR-y0-ad3">
-                                <rect key="frame" x="141" y="140" width="85" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Abby has completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZJ-fM-zpD">
                                 <rect key="frame" x="78" y="102" width="221" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.2 / 3 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVR-y0-ad3">
+                                <rect key="frame" x="120" y="140" width="126" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -554,7 +549,12 @@
                         <viewLayoutGuide key="safeArea" id="ngv-rt-fL5"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundProgressView" destination="e74-Si-cy8" id="lJO-Dp-7W8"/>
                         <outlet property="currentWalkersCollectionView" destination="wmF-a1-nnV" id="eKb-ib-IKo"/>
+                        <outlet property="foregroundProgressView" destination="18z-EI-9SS" id="Bxs-5i-mrD"/>
+                        <outlet property="goalLabel" destination="rVR-y0-ad3" id="7ea-pg-E9c"/>
+                        <outlet property="nameLabel" destination="FZJ-fM-zpD" id="6D4-Bh-2Kn"/>
+                        <outlet property="walkImageView" destination="8FO-YV-vRU" id="TaC-Fy-rBT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZT-WG-bcN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -582,6 +582,7 @@
     </scenes>
     <resources>
         <image name="Icon-App-60x60" width="60" height="60"/>
+        <image name="checkmark" width="160" height="160"/>
         <image name="dog-placeholder" width="110" height="110"/>
     </resources>
 </document>
