@@ -24,6 +24,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         refreshControl.addTarget(self, action: #selector(fetchPosts), for: UIControlEvents.valueChanged)
         // add refresh control to table view
         dogTableView.insertSubview(refreshControl, at: 0)
+        let footerLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        footerLabel.text = "hello dogs!"
+        dogTableView.tableFooterView = footerLabel
+        
         fetchPosts(refresh: refreshControl)
     }
 
