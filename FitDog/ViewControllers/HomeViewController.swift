@@ -33,6 +33,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func didTapStartWalk(_ sender: Any) {
+        if (dogs.count > 1) {
+            performSegue(withIdentifier: "SelectDogSegue", sender: dogs)
+        } else {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "CurrentWalkViewController") as! CurrentWalkViewController
+            self.present(nextViewController, animated:true, completion:nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
