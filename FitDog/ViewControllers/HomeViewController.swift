@@ -24,10 +24,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         refreshControl.addTarget(self, action: #selector(fetchPosts), for: UIControlEvents.valueChanged)
         // add refresh control to table view
         dogTableView.insertSubview(refreshControl, at: 0)
-        let footerLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        footerLabel.text = "hello dogs!"
-        dogTableView.tableFooterView = footerLabel
-        
+        dogTableView.tableFooterView = makeFooterAddDogButton()
         fetchPosts(refresh: refreshControl)
     }
 
@@ -65,6 +62,25 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         dogTableView.reloadData()
         refresh.endRefreshing()
     }
+    
+    @IBAction func didTapAddDog(sender:UIButton){
+        print("user tapped add dog button!")
+        //self.performSegue(withIdentifier: "HomeViewToDogInfoSegue", sender: nil)
+    }
+    
+    func makeFooterAddDogButton() -> UIButton{
+        //TODO: set colors for font and background to the same as the start walk button
+        let result = UIButton(type: UIButtonType.system)
+        result.frame = CGRect(x: 0, y: 0, width: 0, height: 45)
+        //result.backgroundColor = UIColor(displayP3Red: 0.454, green: 0.772, blue: 0.827, alpha: 1)
+        result.setTitle("+ Add Dog", for: .normal)
+        //result.titleLabel!.font = UIFont(name: "System", size: 1000.0)
+        result.setTitleColor(UIColor.darkText, for: .normal)
+        result.addTarget(self, action: #selector(didTapAddDog), for: UIControlEvents.touchUpInside)
+        return result;
+    }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? DetailViewController {
