@@ -473,6 +473,7 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapEndWalk:" destination="MDY-fM-cqm" eventType="touchUpInside" id="gLb-K8-bhJ"/>
+                                    <segue destination="SJg-u8-rjM" kind="presentation" id="oks-XN-t2q"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wmF-a1-nnV">
@@ -585,4 +586,7 @@
         <image name="checkmark" width="160" height="160"/>
         <image name="dog-placeholder" width="110" height="110"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oks-XN-t2q"/>
+    </inferredMetricsTieBreakers>
 </document>
