@@ -35,7 +35,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func didTapStartWalk(_ sender: Any) {
         if (dogs.count > 1) {
-            performSegue(withIdentifier: "SelectDogSegue", sender: dogs)
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SelectDogViewController") as! SelectDogViewController
+            nextViewController.tableView = dogTableView
+            nextViewController.dogs = dogs
+            self.present(nextViewController, animated:true, completion:nil)
         } else {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "CurrentWalkViewController") as! CurrentWalkViewController

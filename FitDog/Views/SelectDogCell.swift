@@ -7,11 +7,26 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class SelectDogCell: UITableViewCell {
-    @IBOutlet weak var dogProfileImageView: UIImageView!
+    
+    @IBOutlet weak var profileImageView: PFImageView!
     @IBOutlet weak var checkmarkImage: UIImageView!
-    @IBOutlet weak var dogNameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    var dog: PFObject! {
+        didSet {
+            profileImageView.layer.masksToBounds = false
+            profileImageView.layer.cornerRadius = profileImageView.frame.height/2
+            profileImageView.clipsToBounds = true
+            self.profileImageView.file = dog["photo"] as? PFFile
+            self.profileImageView.loadInBackground()
+            self.nameLabel.text = dog["name"] as? String
+            checkmarkImage.image = #imageLiteral(resourceName: "check")
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,10 +37,10 @@ class SelectDogCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
-        if selected {
-            checkmarkImage.image = UIImage(named: "check_active")
-        } else {
-            checkmarkImage.image = UIImage(named: "check_normal")
+        if selected{
+            checkmarkImage.isHidden = false
+        } else{
+            checkmarkImage.isHidden = true
         }
     }
 

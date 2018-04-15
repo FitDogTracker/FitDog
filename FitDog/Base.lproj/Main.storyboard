@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -194,7 +194,7 @@
         <!--Select Dog View Controller-->
         <scene sceneID="1le-zh-3If">
             <objects>
-                <viewController id="d2O-k8-RS4" customClass="SelectDogViewController" customModule="FitDog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectDogViewController" id="d2O-k8-RS4" customClass="SelectDogViewController" customModule="FitDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X15-pS-M94">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,34 +216,49 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="165" id="83v-3s-oda" customClass="SelectDogCell" customModule="FitDog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="165"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectDogCell" rowHeight="131" id="83v-3s-oda" customClass="SelectDogCell" customModule="FitDog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="131"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="83v-3s-oda" id="0sN-bs-b8b">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="164.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dog-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="SPL-LK-ISH">
-                                                    <rect key="frame" x="15" y="32" width="100" height="100"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="SPL-LK-ISH" customClass="PFImageView">
+                                                    <rect key="frame" x="8" y="22.5" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="FuO-bb-QLL"/>
+                                                        <constraint firstAttribute="width" constant="100" id="YBe-g1-eBY"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Abby" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRN-rp-9eh">
-                                                    <rect key="frame" x="123" y="64" width="237" height="36"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abby" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRN-rp-9eh">
+                                                    <rect key="frame" x="116" y="54.5" width="252" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="29I-45-ufn">
-                                                    <rect key="frame" x="98" y="21" width="35" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="29I-45-ufn">
+                                                    <rect key="frame" x="87" y="7" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="HOJ-lp-KHa"/>
+                                                        <constraint firstAttribute="width" constant="50" id="tgw-yZ-GWd"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QRN-rp-9eh" firstAttribute="leading" secondItem="SPL-LK-ISH" secondAttribute="trailing" constant="8" id="5cp-Db-1S1"/>
+                                                <constraint firstItem="SPL-LK-ISH" firstAttribute="leading" secondItem="0sN-bs-b8b" secondAttribute="leading" constant="8" id="B98-zq-ugE"/>
+                                                <constraint firstItem="29I-45-ufn" firstAttribute="top" secondItem="0sN-bs-b8b" secondAttribute="top" constant="7" id="RtV-Bk-345"/>
+                                                <constraint firstAttribute="bottom" secondItem="SPL-LK-ISH" secondAttribute="bottom" constant="8" id="hDZ-eS-JaV"/>
+                                                <constraint firstItem="QRN-rp-9eh" firstAttribute="centerY" secondItem="SPL-LK-ISH" secondAttribute="centerY" id="pLA-PV-1HC"/>
+                                                <constraint firstItem="29I-45-ufn" firstAttribute="leading" secondItem="0sN-bs-b8b" secondAttribute="leading" constant="87" id="rvd-aZ-5jM"/>
+                                                <constraint firstItem="QRN-rp-9eh" firstAttribute="trailing" secondItem="0sN-bs-b8b" secondAttribute="trailingMargin" constant="8" id="yzi-ej-BhX"/>
+                                                <constraint firstItem="SPL-LK-ISH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0sN-bs-b8b" secondAttribute="top" constant="8" id="zDX-3k-MhP"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="checkmarkImage" destination="29I-45-ufn" id="0WC-XX-BpB"/>
-                                            <outlet property="dogNameLabel" destination="QRN-rp-9eh" id="U7M-Fk-gOe"/>
-                                            <outlet property="dogProfileImageView" destination="SPL-LK-ISH" id="J5Q-Up-7q3"/>
+                                            <outlet property="nameLabel" destination="QRN-rp-9eh" id="U7M-Fk-gOe"/>
+                                            <outlet property="profileImageView" destination="SPL-LK-ISH" id="Pjp-iJ-Fef"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -474,7 +489,7 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapEndWalk:" destination="MDY-fM-cqm" eventType="touchUpInside" id="gLb-K8-bhJ"/>
-                                    <segue destination="SJg-u8-rjM" kind="presentation" id="oks-XN-t2q"/>
+                                    <segue destination="6IC-R4-SSA" kind="presentation" id="ySA-zC-LaZ"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wmF-a1-nnV">
@@ -584,10 +599,11 @@
     </scenes>
     <resources>
         <image name="Icon-App-60x60" width="60" height="60"/>
-        <image name="checkmark" width="160" height="160"/>
+        <image name="check" width="426" height="426"/>
         <image name="dog-placeholder" width="110" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oks-XN-t2q"/>
+        <segue reference="IsE-gf-t5i"/>
+        <segue reference="ySA-zC-LaZ"/>
     </inferredMetricsTieBreakers>
 </document>
