@@ -16,7 +16,7 @@ class CurrentWalkViewController: UIViewController {
     @IBOutlet weak var backgroundProgressView: UIView!
     @IBOutlet weak var foregroundProgressView: UIView!
     @IBOutlet weak var currentWalkersCollectionView: UICollectionView!
-    var dogs: [Dog] = []
+    var dogs: [SelectDogCell] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

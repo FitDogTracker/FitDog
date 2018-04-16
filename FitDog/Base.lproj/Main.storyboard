@@ -208,7 +208,7 @@
                                     <color key="titleColor" red="0.50495871110000001" green="0.35177868880000002" blue="0.25047169419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="MDY-fM-cqm" kind="show" identifier="CurrentWalkSegue" id="IsE-gf-t5i"/>
+                                    <action selector="didTapGo:" destination="d2O-k8-RS4" eventType="touchUpInside" id="sd8-mH-YyY"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AHD-gW-jqs">
@@ -603,7 +603,6 @@
         <image name="dog-placeholder" width="110" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IsE-gf-t5i"/>
         <segue reference="ySA-zC-LaZ"/>
     </inferredMetricsTieBreakers>
 </document>

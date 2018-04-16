@@ -13,6 +13,7 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var tableView: UITableView!
     var dogs: [Dog]!
+    var selectedDogs: [SelectDogCell] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,27 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! SelectDogCell
+        if cell.isSelected {
+            selectedDogs.append(cell)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! SelectDogCell
+        var index = 0
+        if cell.isSelected == false {
+            for dog in selectedDogs {
+                if selectedDogs.contains(dog) {
+                    selectedDogs.remove(at: index)
+                    return
+                }
+                index = index + 1
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dogs.count
     }
@@ -38,7 +60,14 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+    @IBAction func didTapGo(_ sender: Any) {
+        if (selectedDogs.count > 0) {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let destination = storyBoard.instantiateViewController(withIdentifier: "CurrentWalkViewController") as! CurrentWalkViewController
+            destination.dogs = selectedDogs
+            self.present(destination, animated:true, completion:nil)
+        } else {
+            print("No dogs selected")
+        }
     }
 }
