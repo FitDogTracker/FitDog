@@ -14,6 +14,7 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     var dogs: [Dog]!
     var selectedDogs: [SelectDogCell] = []
+    var currentDogs: [Dog] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.cellForRow(at: indexPath) as! SelectDogCell
         if cell.isSelected {
             selectedDogs.append(cell)
+            currentDogs.append(dogs[indexPath.row])
         }
     }
     
@@ -44,6 +46,7 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
             for dog in selectedDogs {
                 if selectedDogs.contains(dog) {
                     selectedDogs.remove(at: index)
+                    currentDogs.remove(at: index)
                     return
                 }
                 index = index + 1
@@ -65,6 +68,7 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let destination = storyBoard.instantiateViewController(withIdentifier: "CurrentWalkViewController") as! CurrentWalkViewController
             destination.dogs = selectedDogs
+            destination.currentDogs = currentDogs
             self.present(destination, animated:true, completion:nil)
         } else {
             print("No dogs selected")
