@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://fit-dog.herokuapp.com/parse"
             }))
         
-        //DistanceTracker.shared()
+        //ask for permission to access location
+        DistanceTracker.shared.locationManager.requestWhenInUseAuthorization()
         
         PFUser.enableAutomaticUser()
         PFUser.current()!.saveInBackground()
@@ -34,8 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //View controller currently being set in the Storyboard as default will be overridden
             window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
         }
-        
-        
         return true
     }
 
