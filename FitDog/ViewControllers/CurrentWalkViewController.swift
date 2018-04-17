@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CurrentWalkViewController: UIViewController {
+class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var goalLabel: UILabel!
@@ -16,14 +16,17 @@ class CurrentWalkViewController: UIViewController {
     @IBOutlet weak var backgroundProgressView: UIView!
     @IBOutlet weak var foregroundProgressView: UIView!
     @IBOutlet weak var currentWalkersCollectionView: UICollectionView!
-    var dogs: [Dog] = []
+    var dogs: [SelectDogCell]!
+    var currentDogs: [Dog] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         NotificationCenter.default.addObserver(self, selector: #selector(onDistanceUpdate(notification:)), name: .distanceChanged, object: nil)
         DistanceTracker.shared.startTracking()
+
+        currentWalkersCollectionView.delegate = self
+        currentWalkersCollectionView.dataSource = self
     }
     
     deinit {
@@ -35,12 +38,23 @@ class CurrentWalkViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
     @objc func onDistanceUpdate(notification: Notification){
         let distance = notification.object as! Measurement
         let labelText = ((distance.value * 100).rounded() / 100).description + " km"
         DispatchQueue.main.async {
             self.goalLabel.text = labelText
         }
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dogs.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = currentWalkersCollectionView.dequeueReusableCell(withReuseIdentifier: "CurrentDogCell", for: indexPath) as! CurrentDogCell
+        cell.dog = currentDogs[indexPath.row]
+        
+        return cell
     }
     
     @IBAction func didTapEndWalk(_ sender: Any) {

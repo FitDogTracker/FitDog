@@ -10,6 +10,7 @@
 		2FD4805EE76B331940983C2E /* Pods_FitDogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F65258EF02D5E74AD6CBD82 /* Pods_FitDogUITests.framework */; };
 		434AE71D2072E97E00AA8F1F /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434AE71C2072E97E00AA8F1F /* DayCell.swift */; };
 		4368CD0F207EC2F100259B65 /* DistanceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4368CD0E207EC2F100259B65 /* DistanceTracker.swift */; };
+		4368CD11208565FE00259B65 /* CurrentDogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4368CD10208565FE00259B65 /* CurrentDogCell.swift */; };
 		43F1992020699AD0004786B3 /* DogInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F1991F20699AD0004786B3 /* DogInfoViewController.swift */; };
 		43F199222069A6E5004786B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F199212069A6E5004786B3 /* HomeViewController.swift */; };
 		43F199242069A89A004786B3 /* DogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F199232069A89A004786B3 /* DogCell.swift */; };
@@ -56,6 +57,7 @@
 		1D9E0CB4CAEE395E412FEE58 /* Pods-FitDog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitDog.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitDog/Pods-FitDog.release.xcconfig"; sourceTree = "<group>"; };
 		434AE71C2072E97E00AA8F1F /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		4368CD0E207EC2F100259B65 /* DistanceTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceTracker.swift; sourceTree = "<group>"; };
+		4368CD10208565FE00259B65 /* CurrentDogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDogCell.swift; sourceTree = "<group>"; };
 		43F1991F20699AD0004786B3 /* DogInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogInfoViewController.swift; sourceTree = "<group>"; };
 		43F199212069A6E5004786B3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		43F199232069A89A004786B3 /* DogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCell.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				43F199232069A89A004786B3 /* DogCell.swift */,
 				6EF8B1A22069AEA700EB833F /* SelectDogCell.swift */,
 				434AE71C2072E97E00AA8F1F /* DayCell.swift */,
+				4368CD10208565FE00259B65 /* CurrentDogCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				6EF8B1A72069BA7300EB833F /* CurrentWalkViewController.swift in Sources */,
 				43F2C0D420423D730006E5F4 /* AppDelegate.swift in Sources */,
 				43F199242069A89A004786B3 /* DogCell.swift in Sources */,
+				4368CD11208565FE00259B65 /* CurrentDogCell.swift in Sources */,
 				6EF8B1C1207C3B9200EB833F /* Date+NextWeekDay.swift in Sources */,
 				43F1992020699AD0004786B3 /* DogInfoViewController.swift in Sources */,
 				43F199222069A6E5004786B3 /* HomeViewController.swift in Sources */,

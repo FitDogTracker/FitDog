@@ -43,6 +43,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "CurrentWalkViewController") as! CurrentWalkViewController
+            nextViewController.currentDogs = dogs
             self.present(nextViewController, animated:true, completion:nil)
         }
     }
