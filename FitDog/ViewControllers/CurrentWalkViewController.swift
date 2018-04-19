@@ -18,15 +18,32 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBOutlet weak var currentWalkersCollectionView: UICollectionView!
     var dogs: [SelectDogCell]!
     var currentDogs: [Dog] = []
+    var currentGoals: [Goal] = []
+    var currentDistance = Measurement(value: 0, unit: UnitLength.kilometers)
+    var selectedDogIndex: Int!{
+        didSet{
+            let dog = currentDogs[selectedDogIndex]
+            nameLabel.text = dog.name + " has completed"
+            if(currentGoals.count >= selectedDogIndex){
+                let goal = currentGoals[selectedDogIndex]
+                //TODO: update goal stuff here
+            }
+            
+            
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        fetchGoals()
+        setupWalks()
         NotificationCenter.default.addObserver(self, selector: #selector(onDistanceUpdate(notification:)), name: .distanceChanged, object: nil)
         DistanceTracker.shared.startTracking()
-
         currentWalkersCollectionView.delegate = self
         currentWalkersCollectionView.dataSource = self
+        currentWalkersCollectionView.allowsSelection = true
+        self.selectedDogIndex = 0
     }
     
     deinit {
@@ -40,8 +57,12 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
     
 
     @objc func onDistanceUpdate(notification: Notification){
-        let distance = notification.object as! Measurement
-        let labelText = ((distance.value * 100).rounded() / 100).description + " km"
+        self.currentDistance = notification.object as! Measurement
+        var labelText = ((self.currentDistance.value * 100).rounded() / 100).description
+        if(self.currentGoals.count >= self.selectedDogIndex){
+            labelText += "/" + self.currentGoals[self.selectedDogIndex].distance.description
+        }
+        labelText += " km"
         DispatchQueue.main.async {
             self.goalLabel.text = labelText
         }
@@ -57,7 +78,30 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedDogIndex = indexPath.row
+    }
+    
     @IBAction func didTapEndWalk(_ sender: Any) {
         DistanceTracker.shared.endTracking()
     }
+    
+    func fetchGoals(){
+        for dog in currentDogs{
+            let query = Goal.query()
+            query?.whereKey("dog", equalTo: dog)
+            query?.limit = 1
+            query?.findObjectsInBackground(block: { (goals, err) in
+                if let goals = goals{
+                    self.currentGoals.append(goals[0] as! Goal)
+                    self.selectedDogIndex = 0 //reset to 0 after goals are fetched to load goals
+                }
+            })
+        }
+    }
+    
+    func setupWalks(){
+        
+    }
+    
 }
