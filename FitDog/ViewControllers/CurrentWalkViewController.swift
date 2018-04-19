@@ -24,7 +24,7 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
         didSet{
             let dog = currentDogs[selectedDogIndex]
             nameLabel.text = dog.name + " has completed"
-            if(currentGoals.count >= selectedDogIndex){
+            if(currentGoals.count > selectedDogIndex){
                 let goal = currentGoals[selectedDogIndex]
                 //TODO: update goal stuff here
             }
@@ -59,7 +59,7 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
     @objc func onDistanceUpdate(notification: Notification){
         self.currentDistance = notification.object as! Measurement
         var labelText = ((self.currentDistance.value * 100).rounded() / 100).description
-        if(self.currentGoals.count >= self.selectedDogIndex){
+        if(self.currentGoals.count > self.selectedDogIndex){
             labelText += "/" + self.currentGoals[self.selectedDogIndex].distance.description
         }
         labelText += " km"
