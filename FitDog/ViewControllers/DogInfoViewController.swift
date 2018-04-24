@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import SwiftHSVColorPicker
 
 class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -15,14 +16,23 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var profileImageView: UIImageView!
     var dogName: String?
     var dogImage: UIImage?
-    var dogColor: String?
+    var dogColor: UIColor?
     var picker: UIImagePickerController!
+    var colorPicker: SwiftHSVColorPicker!
+    var selectButton: UIButton!
 
     @IBOutlet weak var logoImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let screenSize = UIScreen.main.bounds
+        colorPicker = SwiftHSVColorPicker(frame: CGRect(origin: .init(x: screenSize.width/10, y: screenSize.height/5.2), size: CGSize(width: 300, height: 400)))
+        let selectSize = colorPicker.frame.size
+        selectButton = UIButton(frame: CGRect(x: selectSize.width/2 - 30, y: selectSize.height + 120, width: 150, height: 100))
+        selectButton.titleLabel?.font =  UIFont(name: "ChalkboardSE-Bold", size: 20)
+        selectButton.backgroundColor = UIColor.lightGray
+        selectButton.setTitle("Select Color", for: .normal)
+        selectButton.addTarget(self, action: #selector(didTapSelectColor), for: .touchUpInside)
         picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
@@ -65,9 +75,25 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func didTapColor(_ sender: Any) {
         //TODO: figure out how to store and retrieve colors
-        dogColor = "#FF0000FF"
-        var color = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1).cgColor
-        profileImageView.layer.borderColor = color
+        if(colorPicker.isHidden == true) {
+            colorPicker.isHidden = false
+            selectButton.isHidden = false
+        }
+        colorPicker.backgroundColor = UIColor.lightGray
+        self.view.backgroundColor = UIColor.lightGray
+        self.view.addSubview(colorPicker)
+        self.view.addSubview(selectButton)
+        colorPicker.setViewColor(UIColor.red)
+    }
+    
+    @objc func didTapSelectColor(sender: UIButton!) {
+        print("Button tapped")
+        print(colorPicker.color)
+        colorPicker.isHidden = true
+        selectButton.isHidden = true
+        dogColor = colorPicker.color
+        profileImageView.layer.borderColor = dogColor?.cgColor
+        self.view.backgroundColor = UIColor.white
     }
     
     @IBAction func didTapAddPhoto(_ sender: Any) {

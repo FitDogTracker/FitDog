@@ -26,7 +26,7 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
             nameLabel.text = dog.name + " has completed"
             if(currentGoals.count > selectedDogIndex){
                 let goal = currentGoals[selectedDogIndex]
-                //TODO: set the color of the progress bar to the dog's color
+                foregroundProgressView.backgroundColor = UIColor(hexString:currentDogs[selectedDogIndex].color + "FF")
                 updateProgressBar()
             }
         }
@@ -41,6 +41,7 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
         DistanceTracker.shared.startTracking()
         currentWalkersCollectionView.delegate = self
         currentWalkersCollectionView.dataSource = self
+
         currentWalkersCollectionView.allowsSelection = true
         self.selectedDogIndex = 0
     }
@@ -53,7 +54,6 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     @objc func onDistanceUpdate(notification: Notification){
         self.currentDistance = notification.object as! Measurement

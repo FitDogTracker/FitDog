@@ -39,9 +39,11 @@ class SelectDogCell: UITableViewCell {
         // Configure the view for the selected state
         if selected{
             checkmarkImage.isHidden = false
+            let newSwiftColor = UIColor(red: 108, green: 230, blue: 121)
+            nameLabel.textColor = newSwiftColor
         } else{
             checkmarkImage.isHidden = true
+            nameLabel.textColor = UIColor.darkGray
         }
     }
-
 }
