@@ -34,14 +34,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func didTapStartWalk(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         if (dogs.count > 1) {
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SelectDogViewController") as! SelectDogViewController
-            nextViewController.tableView = dogTableView
-            nextViewController.dogs = dogs
-            self.present(nextViewController, animated:true, completion:nil)
+            self.performSegue(withIdentifier: "SelectDogSegue", sender: nextViewController)
         } else {
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "CurrentWalkViewController") as! CurrentWalkViewController
             nextViewController.currentDogs = dogs
             self.present(nextViewController, animated:true, completion:nil)
@@ -92,14 +89,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return result;
     }
     
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? DetailViewController {
             let cell = sender as! DogCell
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             let image = cell.profileImageView.image
             destination.photoImage = image
+        } else if let destination = segue.destination as? SelectDogViewController {
+            destination.tableView = dogTableView
+            destination.dogs = dogs
         }
     }
 }
