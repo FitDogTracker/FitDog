@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="ChalkboardSE.ttc">
-            <string>ChalkboardSE-Regular</string>
-        </array>
-        <array key="TamilSangamMN.ttc">
-            <string>TamilSangamMN</string>
-            <string>TamilSangamMN-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Dog Info View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -574,20 +565,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e74-Si-cy8">
-                                <rect key="frame" x="16" y="306" width="343" height="55"/>
+                                <rect key="frame" x="76" y="306" width="239" height="55"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="18z-EI-9SS">
+                                        <rect key="frame" x="0.0" y="0.0" width="154" height="55"/>
+                                        <color key="backgroundColor" red="0.059833162898955364" green="0.59047826776649748" blue="0.086892444742857344" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18z-EI-9SS">
-                                <rect key="frame" x="16" y="306" width="197" height="55"/>
-                                <color key="backgroundColor" red="0.059833162898955364" green="0.59047826776649748" blue="0.086892444742857344" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walkdog" translatesAutoresizingMaskIntoConstraints="NO" id="8FO-YV-vRU">
-                                <rect key="frame" x="153" y="246" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="0p9-cA-zMg"/>
-                                    <constraint firstAttribute="height" constant="60" id="a5E-lp-ISd"/>
+                                    <constraint firstAttribute="bottom" secondItem="18z-EI-9SS" secondAttribute="bottom" id="QeU-G7-J3R"/>
+                                    <constraint firstAttribute="leading" secondItem="18z-EI-9SS" secondAttribute="leading" id="SaK-Rq-856"/>
+                                    <constraint firstAttribute="centerY" secondItem="18z-EI-9SS" secondAttribute="centerY" id="UTb-ik-Eo7"/>
+                                    <constraint firstAttribute="top" secondItem="18z-EI-9SS" secondAttribute="top" id="WkA-yF-tuc"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="18z-EI-9SS" secondAttribute="trailing" constant="60" id="b19-hx-gy4"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abby has completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZJ-fM-zpD">
                                 <rect key="frame" x="77" y="102" width="221" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -600,29 +593,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walkdog" translatesAutoresizingMaskIntoConstraints="NO" id="8FO-YV-vRU">
+                                <rect key="frame" x="0.0" y="246" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="0p9-cA-zMg"/>
+                                    <constraint firstAttribute="height" constant="60" id="a5E-lp-ISd"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rVR-y0-ad3" firstAttribute="centerX" secondItem="FZJ-fM-zpD" secondAttribute="centerX" id="37E-o3-LmE"/>
                             <constraint firstItem="wmF-a1-nnV" firstAttribute="trailing" secondItem="ngv-rt-fL5" secondAttribute="trailing" id="46D-YS-N6p"/>
-                            <constraint firstItem="e74-Si-cy8" firstAttribute="bottom" secondItem="18z-EI-9SS" secondAttribute="bottom" id="5Wm-Fd-g2U"/>
+                            <constraint firstItem="8FO-YV-vRU" firstAttribute="leading" secondItem="ngv-rt-fL5" secondAttribute="leading" id="88h-II-vWO"/>
                             <constraint firstItem="rVR-y0-ad3" firstAttribute="top" secondItem="FZJ-fM-zpD" secondAttribute="bottom" constant="8" id="9em-uP-dvu"/>
                             <constraint firstItem="FZJ-fM-zpD" firstAttribute="centerX" secondItem="Md0-pe-sfD" secondAttribute="centerX" id="Bjy-qx-4BQ"/>
                             <constraint firstItem="wmF-a1-nnV" firstAttribute="leading" secondItem="fih-5b-MJm" secondAttribute="leading" id="E1W-x2-tLZ"/>
                             <constraint firstItem="e74-Si-cy8" firstAttribute="centerY" secondItem="Md0-pe-sfD" secondAttribute="centerY" id="IAP-SV-yAf"/>
-                            <constraint firstItem="e74-Si-cy8" firstAttribute="leading" secondItem="18z-EI-9SS" secondAttribute="leading" id="Idj-yx-D6w"/>
                             <constraint firstItem="wmF-a1-nnV" firstAttribute="top" secondItem="fih-5b-MJm" secondAttribute="bottom" constant="8" id="KCD-PF-inP"/>
                             <constraint firstItem="8FO-YV-vRU" firstAttribute="top" secondItem="rVR-y0-ad3" secondAttribute="bottom" constant="70" id="Pm6-Qd-87h"/>
                             <constraint firstItem="FZJ-fM-zpD" firstAttribute="top" secondItem="ngv-rt-fL5" secondAttribute="top" constant="82" id="UEE-GI-0Do"/>
                             <constraint firstItem="fih-5b-MJm" firstAttribute="top" secondItem="e74-Si-cy8" secondAttribute="bottom" constant="71" id="WSS-Q4-ElL"/>
-                            <constraint firstItem="e74-Si-cy8" firstAttribute="centerY" secondItem="18z-EI-9SS" secondAttribute="centerY" id="Zt9-3L-eq7"/>
-                            <constraint firstItem="8FO-YV-vRU" firstAttribute="trailing" secondItem="18z-EI-9SS" secondAttribute="trailing" id="bFa-Da-vLS"/>
+                            <constraint firstItem="ngv-rt-fL5" firstAttribute="trailing" secondItem="e74-Si-cy8" secondAttribute="trailing" constant="60" id="ZFy-uw-qBP"/>
                             <constraint firstItem="wmF-a1-nnV" firstAttribute="leading" secondItem="ngv-rt-fL5" secondAttribute="leading" id="bVX-oB-A7w"/>
-                            <constraint firstItem="8FO-YV-vRU" firstAttribute="leading" secondItem="ngv-rt-fL5" secondAttribute="leading" constant="153" id="ccL-Nr-CiZ"/>
-                            <constraint firstItem="e74-Si-cy8" firstAttribute="top" secondItem="18z-EI-9SS" secondAttribute="top" id="d6A-ZN-RZ8"/>
-                            <constraint firstItem="e74-Si-cy8" firstAttribute="centerX" secondItem="FZJ-fM-zpD" secondAttribute="centerX" id="j80-kg-DH6"/>
                             <constraint firstItem="e74-Si-cy8" firstAttribute="top" secondItem="8FO-YV-vRU" secondAttribute="bottom" id="ldG-4g-LNz"/>
-                            <constraint firstItem="e74-Si-cy8" firstAttribute="leading" secondItem="Md0-pe-sfD" secondAttribute="leadingMargin" id="sDY-32-7ih"/>
+                            <constraint firstItem="e74-Si-cy8" firstAttribute="leading" secondItem="Md0-pe-sfD" secondAttribute="leadingMargin" constant="60" id="sDY-32-7ih"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fih-5b-MJm" secondAttribute="trailing" constant="20" symbolic="YES" id="uIZ-ba-Dhd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ngv-rt-fL5"/>
@@ -634,6 +629,7 @@
                         <outlet property="goalLabel" destination="rVR-y0-ad3" id="7ea-pg-E9c"/>
                         <outlet property="nameLabel" destination="FZJ-fM-zpD" id="6D4-Bh-2Kn"/>
                         <outlet property="walkImageView" destination="8FO-YV-vRU" id="TaC-Fy-rBT"/>
+                        <outlet property="walkImageViewLeadingConstraint" destination="88h-II-vWO" id="sJK-fY-maO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZT-WG-bcN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -666,6 +662,6 @@
         <image name="walkdog" width="170" height="170"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6hY-wC-BvE"/>
+        <segue reference="ySA-zC-LaZ"/>
     </inferredMetricsTieBreakers>
 </document>
