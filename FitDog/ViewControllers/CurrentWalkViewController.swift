@@ -26,10 +26,9 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
             nameLabel.text = dog.name + " has completed"
             if(currentGoals.count > selectedDogIndex){
                 let goal = currentGoals[selectedDogIndex]
-                //TODO: update goal stuff here
+                //TODO: set the color of the progress bar to the dog's color
+                updateProgressBar()
             }
-            
-            
         }
     }
     
@@ -64,6 +63,7 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
         }
         labelText += " km"
         DispatchQueue.main.async {
+            self.updateProgressBar()//TODO: check if this is the correct place for this method
             self.goalLabel.text = labelText
         }
     }
@@ -102,6 +102,18 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
     
     func setupWalks(){
         
+    }
+    
+    func updateProgressBar(){
+        if(currentGoals.count > selectedDogIndex){
+            let goal = currentGoals[selectedDogIndex]
+            var progressWidth = backgroundProgressView.frame.width * CGFloat(currentDistance.value / goal.distance)
+            if(progressWidth > backgroundProgressView.frame.width){// make sure not to go oversized
+                progressWidth = backgroundProgressView.frame.width
+            }
+            foregroundProgressView.frame = CGRect(x: foregroundProgressView.frame.minX, y: foregroundProgressView.frame.minY, width: progressWidth, height: foregroundProgressView.frame.height)
+            walkImageView.frame = CGRect(x: foregroundProgressView.frame.minX + foregroundProgressView.frame.width - walkImageView.frame.width, y: walkImageView.frame.minY, width: walkImageView.frame.width, height: walkImageView.frame.height)
+        }
     }
     
 }
