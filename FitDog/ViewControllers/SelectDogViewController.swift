@@ -19,16 +19,19 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#f0f8ffff")
+        self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
+        tableView.backgroundColor = UIColor(hexString: "#f0f8ffff")
+        goButton.backgroundColor = UIColor(hexString: "#f0f8ffff")
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-        goButton.backgroundColor = UIColor.white
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SelectDogCell", for: indexPath) as! SelectDogCell
         cell.dog = dogs[indexPath.row]
+        cell.backgroundColor = UIColor(hexString: "#f0f8ffff")
         
         return cell
     }
@@ -83,7 +86,7 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func isValid() {
         if (selectedDogs.count == 0) {
-            goButton.backgroundColor = UIColor.white
+            goButton.backgroundColor = UIColor(hexString: "#f0f8ffff")
             goButton.setTitleColor(UIColor(red:91, green:49, blue:11), for: .normal)
         } else {
             goButton.backgroundColor = UIColor(red: 108, green: 230, blue: 121)

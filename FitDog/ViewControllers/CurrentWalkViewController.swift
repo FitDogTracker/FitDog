@@ -21,6 +21,9 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#f0f8ffff")
+        self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
+        currentWalkersCollectionView.backgroundColor = UIColor(hexString: "#f0f8ffff")
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(onDistanceUpdate(notification:)), name: .distanceChanged, object: nil)
         DistanceTracker.shared.startTracking()

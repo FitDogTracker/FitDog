@@ -16,7 +16,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#f0f8ffff")
+        self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
+        dogTableView.backgroundColor = UIColor(hexString: "#f0f8ffff")
         // Do any additional setup after loading the view.
         dogTableView.delegate = self
         dogTableView.dataSource = self
@@ -61,6 +63,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DogCell", for: indexPath) as! DogCell
         cell.dog = dogs[indexPath.row]
+        cell.backgroundColor = UIColor(hexString: "#f0f8ffff")
         
         return cell
     }

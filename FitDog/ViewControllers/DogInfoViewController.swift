@@ -20,11 +20,13 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
     var picker: UIImagePickerController!
     var colorPicker: SwiftHSVColorPicker!
     var selectButton: UIButton!
-
+    
     @IBOutlet weak var logoImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#f0f8ffff")
+        self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
         let screenSize = UIScreen.main.bounds
         colorPicker = SwiftHSVColorPicker(frame: CGRect(origin: .init(x: screenSize.width/10, y: screenSize.height/5.2), size: CGSize(width: 300, height: 400)))
         let selectSize = colorPicker.frame.size
@@ -94,6 +96,7 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
         dogColor = colorPicker.color
         profileImageView.layer.borderColor = dogColor?.cgColor
         self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
     }
     
     @IBAction func didTapAddPhoto(_ sender: Any) {

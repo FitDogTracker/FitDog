@@ -30,7 +30,9 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
+        weeklyTableView.backgroundColor = UIColor(hexString: "f0f8ffff")
+        
         // Do any additional setup after loading the view.
         profileImageView.layer.masksToBounds = false
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
