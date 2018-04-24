@@ -11,6 +11,7 @@ import Parse
 
 class SelectDogViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var goButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     var dogs: [Dog]!
     var selectedDogs: [SelectDogCell] = []
@@ -22,6 +23,7 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        goButton.backgroundColor = UIColor.white
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -33,20 +35,24 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! SelectDogCell
+        isValid()
         if cell.isSelected {
             selectedDogs.append(cell)
             currentDogs.append(dogs[indexPath.row])
         }
+        isValid()
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! SelectDogCell
         var index = 0
+        isValid()
         if cell.isSelected == false {
             for dog in selectedDogs {
                 if selectedDogs.contains(dog) {
                     selectedDogs.remove(at: index)
                     currentDogs.remove(at: index)
+                    isValid()
                     return
                 }
                 index = index + 1
@@ -72,6 +78,16 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
             self.present(destination, animated:true, completion:nil)
         } else {
             print("No dogs selected")
+        }
+    }
+    
+    func isValid() {
+        if (selectedDogs.count == 0) {
+            goButton.backgroundColor = UIColor.white
+            goButton.setTitleColor(UIColor(red:91, green:49, blue:11), for: .normal)
+        } else {
+            goButton.backgroundColor = UIColor(red: 108, green: 230, blue: 121)
+            goButton.setTitleColor(UIColor.white, for: .normal)
         }
     }
 }

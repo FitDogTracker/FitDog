@@ -27,6 +27,8 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
 
         currentWalkersCollectionView.delegate = self
         currentWalkersCollectionView.dataSource = self
+        
+        foregroundProgressView.backgroundColor = UIColor(hexString:currentDogs[0].color)
     }
     
     deinit {
@@ -37,7 +39,6 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     @objc func onDistanceUpdate(notification: Notification){
         let distance = notification.object as! Measurement

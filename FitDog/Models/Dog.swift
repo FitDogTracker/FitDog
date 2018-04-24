@@ -18,13 +18,13 @@ class Dog: PFObject, PFSubclassing {
         return "Dog"
     }
     
-    class func SaveDog(image: UIImage?, name: String?, color: String?, withCompletion completion: PFBooleanResultBlock?) {
+    class func SaveDog(image: UIImage?, name: String?, color: UIColor?, withCompletion completion: PFBooleanResultBlock?) {
         var dog = Dog()
         print("id")
         print(dog.objectId)
         // Add relevant fields to the object
         dog.photo = getPFFileFromImage(image: image)! // PFFile column type
-        dog.color = color!
+        dog.color = (color?.toHexString())!
         dog.name = name!
         
         dog.saveInBackground { (isComplete, err) in
