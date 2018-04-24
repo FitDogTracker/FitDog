@@ -70,7 +70,7 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
         }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dogs.count
+        return currentDogs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
