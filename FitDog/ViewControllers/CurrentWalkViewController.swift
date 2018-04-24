@@ -16,6 +16,8 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBOutlet weak var backgroundProgressView: UIView!
     @IBOutlet weak var foregroundProgressView: UIView!
     @IBOutlet weak var currentWalkersCollectionView: UICollectionView!
+    @IBOutlet weak var walkImageViewLeadingConstraint: NSLayoutConstraint!
+    
     var dogs: [SelectDogCell]!
     var currentDogs: [Dog] = []
     var currentGoals: [Goal] = []
@@ -112,7 +114,7 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
                 progressWidth = backgroundProgressView.frame.width
             }
             foregroundProgressView.frame = CGRect(x: foregroundProgressView.frame.minX, y: foregroundProgressView.frame.minY, width: progressWidth, height: foregroundProgressView.frame.height)
-            walkImageView.frame = CGRect(x: foregroundProgressView.frame.minX + foregroundProgressView.frame.width - walkImageView.frame.width, y: walkImageView.frame.minY, width: walkImageView.frame.width, height: walkImageView.frame.height)
+            walkImageViewLeadingConstraint.constant = foregroundProgressView.frame.minX + foregroundProgressView.frame.width + 21
         }
     }
     
