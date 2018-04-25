@@ -16,6 +16,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 25)!]
         self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#f0f8ffff")
         self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
         dogTableView.backgroundColor = UIColor(hexString: "#f0f8ffff")
@@ -94,9 +96,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let result = UIButton(type: UIButtonType.system)
         result.frame = CGRect(x: 0, y: 0, width: 0, height: 45)
         //result.backgroundColor = UIColor(displayP3Red: 0.454, green: 0.772, blue: 0.827, alpha: 1)
-        result.setTitle("+ Add Dog", for: .normal)
-        //result.titleLabel!.font = UIFont(name: "System", size: 1000.0)
-        result.setTitleColor(UIColor.darkText, for: .normal)
+        result.setTitle("+  Add Dog", for: .normal)
+        result.titleLabel!.font = UIFont(name: "ChalkboardSE-Regular", size: 25)
+        result.setTitleColor(UIColor(hexString: "#4d2600ff"), for: .normal)
         result.addTarget(self, action: #selector(didTapAddDog), for: UIControlEvents.touchUpInside)
         return result;
     }
@@ -107,6 +109,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             let image = cell.profileImageView.image
             destination.photoImage = image
+            destination.dog = cell.dog as! Dog
         } else if let destination = segue.destination as? SelectDogViewController {
             destination.tableView = dogTableView
             destination.dogs = dogs

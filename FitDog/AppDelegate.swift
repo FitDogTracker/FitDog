@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //View controller currently being set in the Storyboard as default will be overridden
             window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
         }
+        let navigation = UINavigationBar.appearance()
+        navigation.tintColor = UIColor(hexString: "#4d2600ff")
         return true
     }
 

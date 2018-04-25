@@ -19,6 +19,8 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 25)!]
         self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#f0f8ffff")
         self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
         tableView.backgroundColor = UIColor(hexString: "#f0f8ffff")
@@ -87,7 +89,7 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
     func isValid() {
         if (selectedDogs.count == 0) {
             goButton.backgroundColor = UIColor(hexString: "#f0f8ffff")
-            goButton.setTitleColor(UIColor(red:91, green:49, blue:11), for: .normal)
+            goButton.setTitleColor(UIColor(hexString: "#4d2600ff"), for: .normal)
         } else {
             goButton.backgroundColor = UIColor(red: 108, green: 230, blue: 121)
             goButton.setTitleColor(UIColor.white, for: .normal)

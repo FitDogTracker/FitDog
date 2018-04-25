@@ -24,12 +24,16 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var saturdayView: UIView!
     @IBOutlet weak var sundayView: UIView!
     @IBOutlet weak var weeklyTableView: UITableView!
+    @IBOutlet weak var navigationTitle: UINavigationItem!
     
     var dog: Dog!
     var photoImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = dog.name
+        navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 25)!]
         self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
         weeklyTableView.backgroundColor = UIColor(hexString: "f0f8ffff")
         
@@ -38,7 +42,6 @@ class DetailViewController: UIViewController {
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
         profileImageView.clipsToBounds = true
         profileImageView.image = photoImage
-        
     }
 
     override func didReceiveMemoryWarning() {

@@ -43,7 +43,7 @@ class SelectDogCell: UITableViewCell {
             nameLabel.textColor = newSwiftColor
         } else{
             checkmarkImage.isHidden = true
-            nameLabel.textColor = UIColor.darkGray
+            nameLabel.textColor = UIColor(hexString: "#4d2600ff")
         }
     }
 }
