@@ -21,6 +21,7 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
     var dogs: [SelectDogCell]!
     var currentDogs: [Dog] = []
     var currentGoals: [Goal] = []
+    var currentWalks: [Walk] = []
     var currentDistance = Measurement(value: 0, unit: UnitLength.kilometers)
     var selectedDogIndex: Int!{
         didSet{
@@ -85,6 +86,7 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     @IBAction func didTapEndWalk(_ sender: Any) {
+        saveWalks()
         DistanceTracker.shared.endTracking()
     }
     
@@ -103,7 +105,20 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func setupWalks(){
-        
+        for dog in currentDogs{
+            let walk = Walk()
+            walk.startTime = Date()
+            walk.dog = dog
+            currentWalks.append(walk)
+        }
+    }
+    
+    func saveWalks(){
+        for walk in currentWalks{
+            walk.endTime = Date()
+            walk.distance = currentDistance.value
+            walk.saveInBackground()
+        }
     }
     
     func updateProgressBar(){
