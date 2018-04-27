@@ -12,8 +12,11 @@ import Parse
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var dogTableView: UITableView!
-    var dogs: [Dog] = []
     @IBOutlet weak var startWalkButton: UIButton!
+    var dogs: [Dog] = []
+    var goals: [Goal] = []
+    var dogsToWalks = [String:[Walk]]()//walks that the user has taken this week keyed by the dog
+    var dogsToDistance = [String:Double]()//dogs mapped to the distance they have walked this week
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +34,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         startWalkButton.layer.cornerRadius = startWalkButton.frame.height/2
         startWalkButton.clipsToBounds = true
         startWalkButton.backgroundColor = UIColor(hexString: "#b22222ff")
-        
+
         // Do any additional setup after loading the view.
         dogTableView.delegate = self
         dogTableView.dataSource = self
@@ -75,6 +78,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DogCell", for: indexPath) as! DogCell
+        if(goals.count > indexPath.row){
+            cell.goal = goals[indexPath.row]
+        }
+        if let dist = dogsToDistance[dogs[indexPath.row].objectId!]{
+            cell.distanceWalked = dist
+        }
+        
         cell.dog = dogs[indexPath.row]
         cell.backgroundColor = UIColor(hexString: "#fffaf0ff")
         
@@ -82,15 +92,45 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc func fetchPosts(refresh: UIRefreshControl){
-        dogs = PFUser.current()?.value(forKey: "dogs") as! [Dog]
+        let dogPointers = PFUser.current()?.value(forKey: "dogs") as! [Dog]
         
         //load dog data from pointers within the user object
-        for dog in dogs{
-            do{
-                try dog.fetchIfNeeded()
-            }
-            catch {
-                print("error fetching dog data")
+        for dog in dogPointers{
+            dog.fetchInBackground { (pFObj, err) in
+                if let dog = pFObj as? Dog{
+                    if let dogIndex = self.dogs.index(of: dog){
+                        self.dogs[dogIndex] = dog
+                    }
+                    else{
+                        self.dogs.append(dog)
+                    }
+                    let walkQuery = Walk.query()
+                    walkQuery?.whereKey("createdAt", greaterThan: Date().previous(Date.Weekday.monday,considerToday: true))//need to test on a Monday to be sure if considerToday should be true or false
+                    walkQuery?.whereKey("dog", equalTo: dog)
+                    walkQuery?.findObjectsInBackground { (objArr, err) in
+                        let walkArr = objArr as! [Walk]
+                        self.dogsToWalks[dog.objectId!] = walkArr
+                        var distance = 0.0
+                        for walk in walkArr{
+                            distance += walk.distance
+                        }
+                        self.dogsToDistance[dog.objectId!] = distance
+                        self.dogTableView.reloadData()//reload data
+                    }
+                    let goalQuery = Goal.query()
+                    goalQuery?.whereKey("dog", equalTo: dog)
+                    goalQuery?.limit = 1
+                    goalQuery?.findObjectsInBackground { (goals, err) in
+                        if let goals = goals{
+                            print("goals array: " + goals.description)
+                            self.goals.append(goals[0] as! Goal)
+                            self.dogTableView.reloadData()
+                        }
+                        if let err = err{
+                            print(err.localizedDescription)
+                        }
+                    }
+                }
             }
         }
         dogTableView.reloadData()
