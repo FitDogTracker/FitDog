@@ -25,7 +25,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-App-60x60" translatesAutoresizingMaskIntoConstraints="NO" id="L25-Ef-pgw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="120" translatesAutoresizingMaskIntoConstraints="NO" id="L25-Ef-pgw">
                                 <rect key="frame" x="97" y="74" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="ibb-1i-eGl"/>
@@ -70,11 +70,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FitDog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqn-QG-wbA">
-                                <rect key="frame" x="165" y="76" width="113" height="57"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FitDog" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqn-QG-wbA">
+                                <rect key="frame" x="165" y="76" width="113.5" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
-                                <color key="textColor" red="0.34255391359329224" green="0.28678029775619507" blue="0.2402532696723938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.34255391359999998" green="0.28678029779999997" blue="0.24025326969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.59999999999999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8V3-6T-y9c">
                                 <rect key="frame" x="147" y="573" width="80" height="40"/>
@@ -92,8 +95,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="L25-Ef-pgw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="KPC-xz-8YA"/>
-                            <constraint firstItem="yqn-QG-wbA" firstAttribute="leading" secondItem="L25-Ef-pgw" secondAttribute="trailing" constant="8" id="RfL-8v-lV7"/>
-                            <constraint firstItem="yqn-QG-wbA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="iAN-gv-cAV"/>
                             <constraint firstItem="L25-Ef-pgw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="97" id="oMG-RH-t3o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -334,22 +335,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10a-wr-2hN">
-                                <rect key="frame" x="0.0" y="64" width="375" height="242"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="10a-wr-2hN">
+                                <rect key="frame" x="0.0" y="64" width="383" height="252"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5.7 km until goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc5-3g-cPS">
-                                <rect key="frame" x="94" y="359" width="186" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.7 km until goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc5-3g-cPS">
+                                <rect key="frame" x="93" y="369" width="186" height="34"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.34255391359999998" green="0.28678029779999997" blue="0.24025326969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weekly Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="721-Zp-EcB">
                                 <rect key="frame" x="17" y="477" width="129" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.34255391359999998" green="0.28678029779999997" blue="0.24025326969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UHN-YJ-khs">
@@ -368,7 +367,7 @@
                                                     <rect key="frame" x="15" y="12" width="150" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.34255391359999998" green="0.28678029779999997" blue="0.24025326969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -477,30 +476,44 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uB1-p6-Xdb">
+                                <rect key="frame" x="220" y="74" width="139" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <state key="normal" title="View Abby's Goals">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="aMB-Z3-iLO">
+                                <rect key="frame" x="86" y="134" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="7Xz-aP-tjs"/>
+                                    <constraint firstAttribute="height" constant="200" id="mvt-T2-cYZ"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mq5-Fe-BwG">
-                                <rect key="frame" x="42" y="401" width="291" height="58"/>
+                                <rect key="frame" x="42" y="411" width="291" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nfc-Ku-dgj">
-                                <rect key="frame" x="42" y="401" width="206" height="58"/>
+                                <rect key="frame" x="42" y="411" width="206" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.67203476929999995" blue="0.97959268030000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uB1-p6-Xdb">
-                                <rect key="frame" x="236" y="269" width="139" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                                <state key="normal" title="View Abby's Goals">
-                                    <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dog-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="aMB-Z3-iLO">
-                                <rect key="frame" x="86" y="119" width="192" height="132"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xc5-3g-cPS" firstAttribute="top" secondItem="10a-wr-2hN" secondAttribute="bottom" constant="53" id="0RV-X0-xSf"/>
+                            <constraint firstItem="10a-wr-2hN" firstAttribute="trailing" secondItem="clN-d1-6oh" secondAttribute="trailing" id="98x-wX-L1b"/>
+                            <constraint firstItem="aMB-Z3-iLO" firstAttribute="leading" secondItem="clN-d1-6oh" secondAttribute="leading" constant="86" id="FPP-Dd-3jX"/>
+                            <constraint firstItem="10a-wr-2hN" firstAttribute="top" secondItem="clN-d1-6oh" secondAttribute="top" id="GwW-Qa-mi5"/>
+                            <constraint firstItem="xc5-3g-cPS" firstAttribute="top" secondItem="aMB-Z3-iLO" secondAttribute="bottom" constant="35" id="LLg-Ue-Ka3"/>
+                            <constraint firstItem="aMB-Z3-iLO" firstAttribute="top" secondItem="clN-d1-6oh" secondAttribute="top" constant="70" id="Vse-IZ-L6d"/>
+                            <constraint firstItem="10a-wr-2hN" firstAttribute="leading" secondItem="clN-d1-6oh" secondAttribute="leading" id="WyI-nD-AG1"/>
+                            <constraint firstItem="xc5-3g-cPS" firstAttribute="centerX" secondItem="aMB-Z3-iLO" secondAttribute="centerX" id="YkG-dC-kSn"/>
+                            <constraint firstItem="clN-d1-6oh" firstAttribute="trailing" secondItem="aMB-Z3-iLO" secondAttribute="trailing" constant="97" id="nJS-yP-60R"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="clN-d1-6oh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="1ms-fG-Nej"/>
@@ -698,12 +711,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-App-60x60" width="60" height="60"/>
+        <image name="120" width="120" height="120"/>
         <image name="check" width="426" height="426"/>
         <image name="dog-placeholder" width="110" height="110"/>
         <image name="walkdog" width="170" height="170"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ySA-zC-LaZ"/>
+        <segue reference="6hY-wC-BvE"/>
     </inferredMetricsTieBreakers>
 </document>

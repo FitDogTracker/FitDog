@@ -13,6 +13,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var dogTableView: UITableView!
     @IBOutlet weak var startWalkButton: UIButton!
+    
     var dogs: [Dog] = []
     var goals: [Goal] = []
     var dogsToWalks = [String:[Walk]]()//walks that the user has taken this week keyed by the dog

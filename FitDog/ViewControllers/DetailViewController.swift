@@ -36,7 +36,7 @@ class DetailViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedStringKey.foregroundColor: UIColor.white,
              NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 25)!]
-        self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
+        view.backgroundColor = UIColor(hexString: "#fffaf0ff")
         weeklyTableView.backgroundColor = UIColor(hexString: "f0f8ffff")
         
         // Do any additional setup after loading the view.
