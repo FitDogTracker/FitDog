@@ -22,6 +22,7 @@
 		43F2C0DE20423D730006E5F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C0DC20423D730006E5F4 /* LaunchScreen.storyboard */; };
 		43F2C0E920423D730006E5F4 /* FitDogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F2C0E820423D730006E5F4 /* FitDogTests.swift */; };
 		43F2C0F420423D730006E5F4 /* FitDogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F2C0F320423D730006E5F4 /* FitDogUITests.swift */; };
+		6E3B117D2091371A00A7F22B /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3B117C2091371A00A7F22B /* UIColor+hex.swift */; };
 		6E623B6C2087F22A00C1A016 /* Walk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E623B6B2087F22A00C1A016 /* Walk.swift */; };
 		6EF8B1A32069AEA700EB833F /* SelectDogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8B1A22069AEA700EB833F /* SelectDogCell.swift */; };
 		6EF8B1A52069B0A800EB833F /* SelectDogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF8B1A42069B0A800EB833F /* SelectDogViewController.swift */; };
@@ -78,6 +79,7 @@
 		43F2C0F520423D730006E5F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57CA1AC809B525FF3206A019 /* Pods_FitDog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitDog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B884FDC2E8BDD9159F22B5 /* Pods-FitDogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitDogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitDogTests/Pods-FitDogTests.release.xcconfig"; sourceTree = "<group>"; };
+		6E3B117C2091371A00A7F22B /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		6E623B6B2087F22A00C1A016 /* Walk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walk.swift; sourceTree = "<group>"; };
 		6EF8B1A22069AEA700EB833F /* SelectDogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDogCell.swift; sourceTree = "<group>"; };
 		6EF8B1A42069B0A800EB833F /* SelectDogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDogViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				6EF8B1C0207C3B9200EB833F /* Date+NextWeekDay.swift */,
+				6E3B117C2091371A00A7F22B /* UIColor+hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				43F199242069A89A004786B3 /* DogCell.swift in Sources */,
 				4368CD11208565FE00259B65 /* CurrentDogCell.swift in Sources */,
 				6EF8B1C1207C3B9200EB833F /* Date+NextWeekDay.swift in Sources */,
+				6E3B117D2091371A00A7F22B /* UIColor+hex.swift in Sources */,
 				43F1992020699AD0004786B3 /* DogInfoViewController.swift in Sources */,
 				43F199222069A6E5004786B3 /* HomeViewController.swift in Sources */,
 			);
