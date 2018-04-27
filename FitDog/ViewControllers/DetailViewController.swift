@@ -27,18 +27,33 @@ class DetailViewController: UIViewController {
     
     var dog: Dog!
     var photoImage: UIImage!
+    var goal : Goal!
+    var walks : [Walk]!
+    var distanceWalked : Double!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         profileImageView.layer.masksToBounds = false
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
         profileImageView.clipsToBounds = true
         profileImageView.image = photoImage
-        
+        completionLabel.text = makeCompletionLabelText()
     }
-
+    
+    func makeCompletionLabelText() -> String{
+        let weeklyGoal = goal.distance * 7
+        if(distanceWalked <= weeklyGoal){
+                var distUntilComplete = weeklyGoal - distanceWalked
+                distUntilComplete = (distUntilComplete * 100).rounded() / 100
+                return distUntilComplete.description + "km until goal"
+        }
+        var distOverGoal = distanceWalked - weeklyGoal
+        distOverGoal = (distOverGoal * 100).rounded() / 100
+        return distOverGoal.description + "km over goal"
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

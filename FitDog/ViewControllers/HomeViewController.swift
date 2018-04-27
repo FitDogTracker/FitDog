@@ -12,7 +12,7 @@ import Parse
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var dogTableView: UITableView!
     var dogs: [Dog] = []
-    var goals: [Goal] = []
+    var goals: [Goal] = [] //TODO: convert to dictionary
     var dogsToWalks = [String:[Walk]]()//walks that the user has taken this week keyed by the dog
     var dogsToDistance = [String:Double]()//dogs mapped to the distance they have walked this week
     
@@ -145,6 +145,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             let image = cell.profileImageView.image
             destination.photoImage = image
+            destination.dog = cell.dog as! Dog
+            destination.walks = dogsToWalks[cell.dog.objectId!]
+            destination.goal = goals[self.dogTableView.indexPath(for: cell)!.row]
+            destination.distanceWalked = cell.distanceWalked
         } else if let destination = segue.destination as? SelectDogViewController {
             destination.tableView = dogTableView
             destination.dogs = dogs
