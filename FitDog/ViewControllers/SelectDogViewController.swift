@@ -20,11 +20,18 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes =
-            [NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 25)!]
-        self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#f0f8ffff")
-        self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
-        tableView.backgroundColor = UIColor(hexString: "#f0f8ffff")
-        goButton.backgroundColor = UIColor(hexString: "#f0f8ffff")
+            [NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 25)!,
+             NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#b22222ff")
+        self.view.backgroundColor = UIColor(hexString: "#fffaf0ff")
+        tableView.backgroundColor = UIColor(hexString: "#fffaf0ff")
+        goButton.backgroundColor = UIColor(hexString: "#fffaf0ff")
+        goButton.layer.borderWidth = 2
+        goButton.layer.masksToBounds = false
+        goButton.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
+        goButton.layer.cornerRadius = goButton.frame.height/2
+        goButton.clipsToBounds = true
+        
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
@@ -33,7 +40,7 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SelectDogCell", for: indexPath) as! SelectDogCell
         cell.dog = dogs[indexPath.row]
-        cell.backgroundColor = UIColor(hexString: "#f0f8ffff")
+        cell.backgroundColor = UIColor(hexString: "#fffaf0ff")
         
         return cell
     }
@@ -88,10 +95,10 @@ class SelectDogViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func isValid() {
         if (selectedDogs.count == 0) {
-            goButton.backgroundColor = UIColor(hexString: "#f0f8ffff")
+            goButton.backgroundColor = UIColor(hexString: "#fffaf0ff")
             goButton.setTitleColor(UIColor(hexString: "#4d2600ff"), for: .normal)
         } else {
-            goButton.backgroundColor = UIColor(red: 108, green: 230, blue: 121)
+            goButton.backgroundColor = UIColor(hexString: "#b22222ff")
             goButton.setTitleColor(UIColor.white, for: .normal)
         }
     }

@@ -12,7 +12,7 @@ import ParseUI
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var completionLabel: UILabel!
     @IBOutlet weak var progressBarView: UIView!
     @IBOutlet weak var weeklyProgressLabel: UILabel!
@@ -25,6 +25,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var sundayView: UIView!
     @IBOutlet weak var weeklyTableView: UITableView!
     @IBOutlet weak var navigationTitle: UINavigationItem!
+    @IBOutlet weak var profileImageView: UIImageView!
     
     var dog: Dog!
     var photoImage: UIImage!
@@ -33,7 +34,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         self.title = dog.name
         navigationController?.navigationBar.titleTextAttributes =
-            [NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 25)!]
+            [NSAttributedStringKey.foregroundColor: UIColor.white,
+             NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 25)!]
         self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
         weeklyTableView.backgroundColor = UIColor(hexString: "f0f8ffff")
         
@@ -42,13 +44,18 @@ class DetailViewController: UIViewController {
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
         profileImageView.clipsToBounds = true
         profileImageView.image = photoImage
+        
+        backgroundImageView.image = photoImage
+        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.regular)
+        let blurView = UIVisualEffectView(effect: darkBlur)
+        blurView.frame = backgroundImageView.bounds
+        backgroundImageView.addSubview(blurView)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

@@ -28,8 +28,8 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#f0f8ffff")
-        self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
+        self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#b22222ff")
+        self.view.backgroundColor = UIColor(hexString: "#fffaf0ff")
         let screenSize = UIScreen.main.bounds
         colorPicker = SwiftHSVColorPicker(frame: CGRect(origin: .init(x: screenSize.width/10, y: screenSize.height/4.8), size: CGSize(width: 300, height: 400)))
         let selectSize = colorPicker.frame.size
@@ -57,27 +57,29 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
         profileImageView.layer.borderColor = UIColor.white.cgColor
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
         profileImageView.clipsToBounds = true
+        profileImageView.backgroundColor = UIColor(hexString: "#b22222ff")
         
-        colorButton.backgroundColor = .clear
         colorButton.layer.cornerRadius = 12
         colorButton.layer.borderWidth = 1
         colorButton.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
+        colorButton.backgroundColor = UIColor(hexString: "#b22222ff")
         
-        photoButton.backgroundColor = .clear
         photoButton.layer.cornerRadius = 12
         photoButton.layer.borderWidth = 1
         photoButton.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
+        photoButton.backgroundColor = UIColor(hexString: "#b22222ff")
         
-        submitButton.backgroundColor = .clear
         submitButton.layer.cornerRadius = 12
         submitButton.layer.borderWidth = 1
         submitButton.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
+        submitButton.backgroundColor = UIColor(hexString: "#b22222ff")
         
-        nameTextField.textColor = UIColor(hexString: "#4d2600ff")
-        nameTextField.backgroundColor = .clear
+        nameTextField.textColor = UIColor.white
         nameTextField.layer.cornerRadius = 10
         nameTextField.layer.borderWidth = 1
         nameTextField.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
+        nameTextField.backgroundColor = UIColor(hexString: "#b22222ff")
+        nameTextField.attributedPlaceholder = NSAttributedString(string:"Enter your dog's name", attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
@@ -120,7 +122,7 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
         dogColor = colorPicker.color
         profileImageView.layer.borderColor = dogColor?.cgColor
         self.view.backgroundColor = UIColor.white
-        self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
+        self.view.backgroundColor = UIColor(hexString: "#fffaf0ff")
     }
     
     @IBAction func didTapAddPhoto(_ sender: Any) {

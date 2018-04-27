@@ -13,14 +13,25 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var dogTableView: UITableView!
     var dogs: [Dog] = []
+    @IBOutlet weak var startWalkButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes =
-            [NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 25)!]
-        self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#f0f8ffff")
-        self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
-        dogTableView.backgroundColor = UIColor(hexString: "#f0f8ffff")
+            [NSAttributedStringKey.foregroundColor: UIColor.white,
+             NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 25)!]
+        self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#b22222ff")
+        self.view.backgroundColor = UIColor(hexString: "#fffaf0ff")
+        dogTableView.backgroundColor = UIColor(hexString: "#fffaf0ff")
+        
+        startWalkButton.tintColor = UINavigationBar.appearance().tintColor
+        startWalkButton.layer.borderWidth = 2
+        startWalkButton.layer.masksToBounds = false
+        startWalkButton.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
+        startWalkButton.layer.cornerRadius = startWalkButton.frame.height/2
+        startWalkButton.clipsToBounds = true
+        startWalkButton.backgroundColor = UIColor(hexString: "#b22222ff")
+        
         // Do any additional setup after loading the view.
         dogTableView.delegate = self
         dogTableView.dataSource = self
@@ -65,7 +76,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DogCell", for: indexPath) as! DogCell
         cell.dog = dogs[indexPath.row]
-        cell.backgroundColor = UIColor(hexString: "#f0f8ffff")
+        cell.backgroundColor = UIColor(hexString: "#fffaf0ff")
         
         return cell
     }
@@ -95,7 +106,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         //TODO: set colors for font and background to the same as the start walk button
         let result = UIButton(type: UIButtonType.system)
         result.frame = CGRect(x: 0, y: 0, width: 0, height: 45)
-        //result.backgroundColor = UIColor(displayP3Red: 0.454, green: 0.772, blue: 0.827, alpha: 1)
         result.setTitle("+  Add Dog", for: .normal)
         result.titleLabel!.font = UIFont(name: "ChalkboardSE-Regular", size: 25)
         result.setTitleColor(UIColor(hexString: "#4d2600ff"), for: .normal)

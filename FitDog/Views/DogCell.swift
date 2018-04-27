@@ -26,9 +26,19 @@ class DogCell: UITableViewCell {
             self.profileImageView.file = dog["photo"] as? PFFile
             self.profileImageView.loadInBackground()
             self.nameLabel.text = dog["name"] as? String
-            self.progressBackgroundView.backgroundColor = UIColor .gray
+            self.progressBackgroundView.backgroundColor = UIColor(hexString:"#CCCCCCff")
+            progressBackgroundView.layer.borderWidth = 2
+            progressBackgroundView.layer.masksToBounds = false
+            progressBackgroundView.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
+            progressBackgroundView.layer.cornerRadius = progressBackgroundView.frame.height/2
+            progressBackgroundView.clipsToBounds = true
             let color = dog["color"] as! String
             self.progressForegroundView.backgroundColor = UIColor(hexString: color + "ff")
+            progressForegroundView.layer.borderWidth = 2
+            progressForegroundView.layer.masksToBounds = false
+            progressForegroundView.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
+            progressForegroundView.layer.cornerRadius = progressBackgroundView.frame.height/2
+            progressForegroundView.clipsToBounds = true
         }
     }
     

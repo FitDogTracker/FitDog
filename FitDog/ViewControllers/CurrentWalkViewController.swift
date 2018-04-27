@@ -17,6 +17,7 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBOutlet weak var foregroundProgressView: UIView!
     @IBOutlet weak var currentWalkersCollectionView: UICollectionView!
     @IBOutlet weak var walkImageViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var endWalkButton: UIButton!
     
     var dogs: [SelectDogCell]!
     var currentDogs: [Dog] = []
@@ -36,9 +37,30 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#f0f8ffff")
-        self.view.backgroundColor = UIColor(hexString: "#f0f8ffff")
-        currentWalkersCollectionView.backgroundColor = UIColor(hexString: "#f0f8ffff")
+        self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#b22222ff")
+        self.view.backgroundColor = UIColor(hexString: "#fffaf0ff")
+        currentWalkersCollectionView.backgroundColor = UIColor(hexString: "#fffaf0ff")
+        backgroundProgressView.layer.borderWidth = 2
+        backgroundProgressView.layer.masksToBounds = false
+        backgroundProgressView.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
+        backgroundProgressView.layer.cornerRadius = backgroundProgressView.frame.height/4
+        backgroundProgressView.clipsToBounds = true
+        
+        foregroundProgressView.layer.borderWidth = 2
+        foregroundProgressView.layer.masksToBounds = false
+        foregroundProgressView.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
+        foregroundProgressView.layer.cornerRadius = foregroundProgressView.frame.height/4
+        foregroundProgressView.clipsToBounds = true
+        
+        endWalkButton.backgroundColor = UIColor(hexString: "#fffaf0ff")
+        endWalkButton.layer.borderWidth = 2
+        endWalkButton.layer.masksToBounds = false
+        endWalkButton.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
+        endWalkButton.layer.cornerRadius = endWalkButton.frame.height/2
+        endWalkButton.clipsToBounds = true
+        endWalkButton.backgroundColor = UIColor(hexString: "#b22222ff")
+        endWalkButton.setTitleColor(UIColor.white, for: .normal)
+        
         // Do any additional setup after loading the view.
         fetchGoals()
         setupWalks()

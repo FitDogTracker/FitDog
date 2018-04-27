@@ -24,7 +24,7 @@ class SelectDogCell: UITableViewCell {
             self.profileImageView.file = dog["photo"] as? PFFile
             self.profileImageView.loadInBackground()
             self.nameLabel.text = dog["name"] as? String
-            checkmarkImage.image = #imageLiteral(resourceName: "check")
+            checkmarkImage.image = #imageLiteral(resourceName: "check3")
         }
     }
     
@@ -39,8 +39,7 @@ class SelectDogCell: UITableViewCell {
         // Configure the view for the selected state
         if selected{
             checkmarkImage.isHidden = false
-            let newSwiftColor = UIColor(red: 108, green: 230, blue: 121)
-            nameLabel.textColor = newSwiftColor
+            nameLabel.textColor = UIColor(hexString: "#b22222ff")
         } else{
             checkmarkImage.isHidden = true
             nameLabel.textColor = UIColor(hexString: "#4d2600ff")

@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
         }
         let navigation = UINavigationBar.appearance()
-        navigation.tintColor = UIColor(hexString: "#4d2600ff")
+        navigation.tintColor = UIColor.white
         return true
     }
 
