@@ -47,6 +47,7 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
         backgroundProgressView.layer.cornerRadius = backgroundProgressView.frame.height/4
         backgroundProgressView.clipsToBounds = true
         
+        foregroundProgressView.frame.size.width = 0
         foregroundProgressView.layer.borderWidth = 2
         foregroundProgressView.layer.masksToBounds = false
         foregroundProgressView.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
