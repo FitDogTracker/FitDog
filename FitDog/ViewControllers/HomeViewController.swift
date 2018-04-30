@@ -10,7 +10,10 @@ import UIKit
 import Parse
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var dogTableView: UITableView!
+    @IBOutlet weak var startWalkButton: UIButton!
+    
     var dogs: [Dog] = []
     var goals: [Goal] = [] //TODO: convert to dictionary
     var dogsToWalks = [String:[Walk]]()//walks that the user has taken this week keyed by the dog
@@ -18,6 +21,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedStringKey.foregroundColor: UIColor.white,
+             NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 25)!]
+        self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#b22222ff")
+        self.view.backgroundColor = UIColor(hexString: "#fffaf0ff")
+        dogTableView.backgroundColor = UIColor(hexString: "#fffaf0ff")
+        
+        startWalkButton.tintColor = UINavigationBar.appearance().tintColor
+        startWalkButton.layer.borderWidth = 2
+        startWalkButton.layer.masksToBounds = false
+        startWalkButton.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
+        startWalkButton.layer.cornerRadius = startWalkButton.frame.height/2
+        startWalkButton.clipsToBounds = true
+        startWalkButton.backgroundColor = UIColor(hexString: "#b22222ff")
+
         // Do any additional setup after loading the view.
         dogTableView.delegate = self
         dogTableView.dataSource = self
@@ -64,12 +82,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if(goals.count > indexPath.row){
             cell.goal = goals[indexPath.row]
         }
-        
         if let dist = dogsToDistance[dogs[indexPath.row].objectId!]{
+            print("dist: " + dist.description)
             cell.distanceWalked = dist
         }
         
         cell.dog = dogs[indexPath.row]
+        cell.backgroundColor = UIColor(hexString: "#fffaf0ff")
         
         return cell
     }
@@ -88,7 +107,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                         self.dogs.append(dog)
                     }
                     let walkQuery = Walk.query()
-                    walkQuery?.whereKey("createdAt", greaterThan: Date().previous(Date.Weekday.monday,considerToday: true))//need to test on a Monday to be sure if considerToday should be true or false
+                    walkQuery?.whereKey("createdAt", greaterThanOrEqualTo: Date().previous(Date.Weekday.monday,considerToday: true))
                     walkQuery?.whereKey("dog", equalTo: dog)
                     walkQuery?.findObjectsInBackground { (objArr, err) in
                         let walkArr = objArr as! [Walk]
@@ -120,8 +139,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         refresh.endRefreshing()
     }
     
-    
-    
     @IBAction func didTapAddDog(sender:UIButton){
         print("user tapped add dog button!")
         self.performSegue(withIdentifier: "HomeViewToDogInfoSegue", sender: nil)
@@ -131,10 +148,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         //TODO: set colors for font and background to the same as the start walk button
         let result = UIButton(type: UIButtonType.system)
         result.frame = CGRect(x: 0, y: 0, width: 0, height: 45)
-        //result.backgroundColor = UIColor(displayP3Red: 0.454, green: 0.772, blue: 0.827, alpha: 1)
-        result.setTitle("+ Add Dog", for: .normal)
-        //result.titleLabel!.font = UIFont(name: "System", size: 1000.0)
-        result.setTitleColor(UIColor.darkText, for: .normal)
+        result.setTitle("+  Add Dog", for: .normal)
+        result.titleLabel!.font = UIFont(name: "ChalkboardSE-Regular", size: 25)
+        result.setTitleColor(UIColor(hexString: "#4d2600ff"), for: .normal)
         result.addTarget(self, action: #selector(didTapAddDog), for: UIControlEvents.touchUpInside)
         return result;
     }

@@ -41,7 +41,8 @@ extension Date {
         let calendar = Calendar(identifier: .gregorian)
         
         if consider && calendar.component(.weekday, from: self) == searchWeekdayIndex {
-            return self
+            let cal = Calendar(identifier: .gregorian)
+            return cal.startOfDay(for: self)//return the start of the current day
         }
         
         var nextDateComponent = DateComponents()

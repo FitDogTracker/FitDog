@@ -12,7 +12,7 @@ import ParseUI
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var completionLabel: UILabel!
     @IBOutlet weak var progressBarView: UIView!
     @IBOutlet weak var weeklyProgressLabel: UILabel!
@@ -24,6 +24,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var saturdayView: UIView!
     @IBOutlet weak var sundayView: UIView!
     @IBOutlet weak var weeklyTableView: UITableView!
+    @IBOutlet weak var navigationTitle: UINavigationItem!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var goalButton: UIButton!
     
     var dog: Dog!
     var photoImage: UIImage!
@@ -33,6 +36,12 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = dog.name
+        navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedStringKey.foregroundColor: UIColor.white,
+             NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 25)!]
+        view.backgroundColor = UIColor(hexString: "#fffaf0ff")
+        weeklyTableView.backgroundColor = UIColor(hexString: "#fffaf0ff")
         
         // Do any additional setup after loading the view.
         profileImageView.layer.masksToBounds = false
@@ -40,6 +49,17 @@ class DetailViewController: UIViewController {
         profileImageView.clipsToBounds = true
         profileImageView.image = photoImage
         completionLabel.text = makeCompletionLabelText()
+        profileImageView.layer.borderWidth = 3
+        profileImageView.layer.borderColor = UIColor(hexString: "#fffaf0ff")?.cgColor
+        
+        backgroundImageView.image = photoImage
+        let blur = UIBlurEffect(style: UIBlurEffectStyle.regular)
+        let blurView = UIVisualEffectView(effect: blur)
+        blurView.frame = backgroundImageView.bounds
+        backgroundImageView.addSubview(blurView)
+        
+        goalButton.setTitle("View " + dog.name + "'s Goals", for: .normal)
+        goalButton.sizeToFit()
     }
     
     func makeCompletionLabelText() -> String{
@@ -58,7 +78,6 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

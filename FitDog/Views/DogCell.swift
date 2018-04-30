@@ -17,18 +17,29 @@ class DogCell: UITableViewCell {
     @IBOutlet weak var progressBackgroundView: UIView!
     @IBOutlet weak var progressForegroundView: UIView!
     @IBOutlet weak var completionLabel: UILabel!
+    @IBOutlet weak var progressForegroundWidthConstraint: NSLayoutConstraint!
     
     var dog: PFObject! {
         didSet {
             profileImageView.layer.masksToBounds = false
             profileImageView.layer.cornerRadius = profileImageView.frame.height/2
             profileImageView.clipsToBounds = true
-            self.profileImageView.file = dog["photo"] as? PFFile
-            self.profileImageView.loadInBackground()
-            self.nameLabel.text = dog["name"] as? String
-            self.progressBackgroundView.backgroundColor = UIColor .gray
+            profileImageView.file = dog["photo"] as? PFFile
+            profileImageView.loadInBackground()
+            nameLabel.text = dog["name"] as? String
+            progressBackgroundView.backgroundColor = UIColor(hexString:"#CCCCCCff")
+            progressBackgroundView.layer.borderWidth = 2
+            progressBackgroundView.layer.masksToBounds = false
+            progressBackgroundView.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
+            progressBackgroundView.layer.cornerRadius = progressBackgroundView.frame.height/2
+            progressBackgroundView.clipsToBounds = true
             let color = dog["color"] as! String
-            self.progressForegroundView.backgroundColor = UIColor(hexString: color + "ff")
+            progressForegroundView.backgroundColor = UIColor(hexString: color + "ff")
+            progressForegroundView.layer.borderWidth = 2
+            progressForegroundView.layer.masksToBounds = false
+            progressForegroundView.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
+            progressForegroundView.layer.cornerRadius = progressBackgroundView.frame.height/2
+            progressForegroundView.clipsToBounds = true
         }
     }
     
@@ -66,7 +77,7 @@ class DogCell: UITableViewCell {
                     progressWidth = progressBackgroundView.frame.width
                 }
                 print("progress Width" + progressWidth.description)
-                progressForegroundView.frame = CGRect(x: progressForegroundView.frame.minX, y: progressForegroundView.frame.minY, width: progressWidth, height: progressForegroundView.frame.height)
+                progressForegroundWidthConstraint.constant = progressWidth
             }
             labelText += " km"
             completionLabel.text = labelText
