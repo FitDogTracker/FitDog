@@ -33,7 +33,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your dog's name" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cfg-eb-Ry5">
-                                <rect key="frame" x="82.5" y="377" width="210" height="40"/>
+                                <rect key="frame" x="82" y="366" width="210" height="40"/>
                                 <color key="backgroundColor" red="0.81261838094785432" green="0.94708147828889866" blue="0.96520066624365486" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.34255391359329224" green="0.28678029775619507" blue="0.2402532696723938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -45,7 +45,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIH-cB-MyI">
-                                <rect key="frame" x="117" y="446" width="140" height="40"/>
+                                <rect key="frame" x="117" y="435" width="140" height="40"/>
                                 <color key="backgroundColor" red="0.81261838094785432" green="0.94708147828889866" blue="0.96520066624365486" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kfZ-hd-2pv"/>
@@ -60,7 +60,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9T-yl-EIZ">
-                                <rect key="frame" x="117" y="506" width="140" height="37"/>
+                                <rect key="frame" x="117" y="495" width="140" height="40"/>
                                 <color key="backgroundColor" red="0.81261838094785432" green="0.94708147828889866" blue="0.96520066624365486" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="lqO-PD-Bjl"/>
@@ -73,15 +73,16 @@
                                     <action selector="didTapAddPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iP2-RX-rgM"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="o3f-pr-dPt" customClass="PFImageView">
-                                <rect key="frame" x="97" y="162" width="180" height="180"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="dog-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="o3f-pr-dPt" customClass="PFImageView">
+                                <rect key="frame" x="97" y="151" width="180" height="180"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="egD-EP-sOT"/>
+                                    <constraint firstAttribute="width" constant="180" id="gwK-WV-knX"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FitDog" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqn-QG-wbA">
-                                <rect key="frame" x="165" y="74" width="114" height="60"/>
+                                <rect key="frame" x="158" y="74" width="114" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="PK2-ae-Zoi"/>
                                     <constraint firstAttribute="width" constant="114" id="QhP-lD-v0U"/>
@@ -93,7 +94,7 @@
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8V3-6T-y9c">
-                                <rect key="frame" x="147" y="581" width="80" height="40"/>
+                                <rect key="frame" x="147" y="573" width="80" height="40"/>
                                 <color key="backgroundColor" red="0.81261838094785432" green="0.94708147828889866" blue="0.96520066624365486" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Npr-CQ-v6u"/>
@@ -111,9 +112,8 @@
                         <constraints>
                             <constraint firstItem="KIH-cB-MyI" firstAttribute="top" secondItem="Cfg-eb-Ry5" secondAttribute="bottom" constant="29" id="0ET-5h-cDK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8V3-6T-y9c" secondAttribute="bottom" constant="54" id="183-o5-8pO"/>
-                            <constraint firstItem="o3f-pr-dPt" firstAttribute="centerX" secondItem="8V3-6T-y9c" secondAttribute="centerX" id="4BV-Sx-nwi"/>
+                            <constraint firstItem="8V3-6T-y9c" firstAttribute="centerX" secondItem="H9T-yl-EIZ" secondAttribute="centerX" id="4L5-yG-SwH"/>
                             <constraint firstItem="o3f-pr-dPt" firstAttribute="centerX" secondItem="Cfg-eb-Ry5" secondAttribute="centerX" id="5MG-GF-Huc"/>
-                            <constraint firstItem="o3f-pr-dPt" firstAttribute="leading" secondItem="L25-Ef-pgw" secondAttribute="leading" id="EM0-Dj-rxw"/>
                             <constraint firstItem="8V3-6T-y9c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="EsW-5d-atk"/>
                             <constraint firstItem="8V3-6T-y9c" firstAttribute="top" secondItem="H9T-yl-EIZ" secondAttribute="bottom" constant="38" id="HRe-h3-SZF"/>
                             <constraint firstItem="L25-Ef-pgw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="KPC-xz-8YA"/>
@@ -121,13 +121,12 @@
                             <constraint firstItem="KIH-cB-MyI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="117" id="Vxo-BP-7mZ"/>
                             <constraint firstItem="o3f-pr-dPt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z13-C6-ybF"/>
                             <constraint firstItem="yqn-QG-wbA" firstAttribute="centerY" secondItem="L25-Ef-pgw" secondAttribute="centerY" id="eR5-B5-fqf"/>
-                            <constraint firstItem="o3f-pr-dPt" firstAttribute="top" secondItem="yqn-QG-wbA" secondAttribute="bottom" constant="28" id="g6C-5u-JSE"/>
                             <constraint firstItem="H9T-yl-EIZ" firstAttribute="top" secondItem="KIH-cB-MyI" secondAttribute="bottom" constant="20" id="kAq-x2-lUb"/>
                             <constraint firstItem="Cfg-eb-Ry5" firstAttribute="top" secondItem="o3f-pr-dPt" secondAttribute="bottom" constant="35" id="lsu-G4-fvl"/>
                             <constraint firstItem="L25-Ef-pgw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="97" id="oMG-RH-t3o"/>
+                            <constraint firstItem="H9T-yl-EIZ" firstAttribute="leading" secondItem="KIH-cB-MyI" secondAttribute="leading" id="vPp-SP-0fI"/>
                             <constraint firstItem="o3f-pr-dPt" firstAttribute="centerX" secondItem="KIH-cB-MyI" secondAttribute="centerX" id="wD6-iu-W0h"/>
-                            <constraint firstItem="yqn-QG-wbA" firstAttribute="leading" secondItem="L25-Ef-pgw" secondAttribute="trailing" constant="8" symbolic="YES" id="zhb-DR-dUJ"/>
-                            <constraint firstItem="o3f-pr-dPt" firstAttribute="centerX" secondItem="H9T-yl-EIZ" secondAttribute="centerX" id="zsS-uM-lNk"/>
+                            <constraint firstItem="yqn-QG-wbA" firstAttribute="leading" secondItem="L25-Ef-pgw" secondAttribute="trailing" constant="1" id="zhb-DR-dUJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
