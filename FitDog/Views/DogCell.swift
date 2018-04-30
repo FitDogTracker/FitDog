@@ -17,6 +17,7 @@ class DogCell: UITableViewCell {
     @IBOutlet weak var progressBackgroundView: UIView!
     @IBOutlet weak var progressForegroundView: UIView!
     @IBOutlet weak var completionLabel: UILabel!
+    @IBOutlet weak var progressForegroundWidthConstraint: NSLayoutConstraint!
     
     var dog: PFObject! {
         didSet {
@@ -76,7 +77,7 @@ class DogCell: UITableViewCell {
                     progressWidth = progressBackgroundView.frame.width
                 }
                 print("progress Width" + progressWidth.description)
-                progressForegroundView.frame = CGRect(x: progressForegroundView.frame.minX, y: progressForegroundView.frame.minY, width: progressWidth, height: progressForegroundView.frame.height)
+                progressForegroundWidthConstraint.constant = progressWidth
             }
             labelText += " km"
             completionLabel.text = labelText
