@@ -83,6 +83,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.goal = goals[indexPath.row]
         }
         if let dist = dogsToDistance[dogs[indexPath.row].objectId!]{
+            print("dist: " + dist.description)
             cell.distanceWalked = dist
         }
         
@@ -106,7 +107,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                         self.dogs.append(dog)
                     }
                     let walkQuery = Walk.query()
-                    walkQuery?.whereKey("createdAt", greaterThan: Date().previous(Date.Weekday.monday,considerToday: true))//need to test on a Monday to be sure if considerToday should be true or false
+                    walkQuery?.whereKey("createdAt", greaterThanOrEqualTo: Date().previous(Date.Weekday.monday,considerToday: true))
                     walkQuery?.whereKey("dog", equalTo: dog)
                     walkQuery?.findObjectsInBackground { (objArr, err) in
                         let walkArr = objArr as! [Walk]
