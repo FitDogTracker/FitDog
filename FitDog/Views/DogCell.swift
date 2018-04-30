@@ -23,17 +23,17 @@ class DogCell: UITableViewCell {
             profileImageView.layer.masksToBounds = false
             profileImageView.layer.cornerRadius = profileImageView.frame.height/2
             profileImageView.clipsToBounds = true
-            self.profileImageView.file = dog["photo"] as? PFFile
-            self.profileImageView.loadInBackground()
-            self.nameLabel.text = dog["name"] as? String
-            self.progressBackgroundView.backgroundColor = UIColor(hexString:"#CCCCCCff")
+            profileImageView.file = dog["photo"] as? PFFile
+            profileImageView.loadInBackground()
+            nameLabel.text = dog["name"] as? String
+            progressBackgroundView.backgroundColor = UIColor(hexString:"#CCCCCCff")
             progressBackgroundView.layer.borderWidth = 2
             progressBackgroundView.layer.masksToBounds = false
             progressBackgroundView.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor
             progressBackgroundView.layer.cornerRadius = progressBackgroundView.frame.height/2
             progressBackgroundView.clipsToBounds = true
             let color = dog["color"] as! String
-            self.progressForegroundView.backgroundColor = UIColor(hexString: color + "ff")
+            progressForegroundView.backgroundColor = UIColor(hexString: color + "ff")
             progressForegroundView.layer.borderWidth = 2
             progressForegroundView.layer.masksToBounds = false
             progressForegroundView.layer.borderColor = UIColor(hexString: "#4d2600ff")?.cgColor

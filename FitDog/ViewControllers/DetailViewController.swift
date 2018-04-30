@@ -26,6 +26,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var weeklyTableView: UITableView!
     @IBOutlet weak var navigationTitle: UINavigationItem!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var goalButton: UIButton!
     
     var dog: Dog!
     var photoImage: UIImage!
@@ -37,19 +38,24 @@ class DetailViewController: UIViewController {
             [NSAttributedStringKey.foregroundColor: UIColor.white,
              NSAttributedStringKey.font: UIFont(name: "ChalkboardSE-Bold", size: 25)!]
         view.backgroundColor = UIColor(hexString: "#fffaf0ff")
-        weeklyTableView.backgroundColor = UIColor(hexString: "f0f8ffff")
+        weeklyTableView.backgroundColor = UIColor(hexString: "#fffaf0ff")
         
         // Do any additional setup after loading the view.
         profileImageView.layer.masksToBounds = false
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
         profileImageView.clipsToBounds = true
         profileImageView.image = photoImage
+        profileImageView.layer.borderWidth = 3
+        profileImageView.layer.borderColor = UIColor(hexString: "#fffaf0ff")?.cgColor
         
         backgroundImageView.image = photoImage
-        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.regular)
-        let blurView = UIVisualEffectView(effect: darkBlur)
+        let blur = UIBlurEffect(style: UIBlurEffectStyle.regular)
+        let blurView = UIVisualEffectView(effect: blur)
         blurView.frame = backgroundImageView.bounds
         backgroundImageView.addSubview(blurView)
+        
+        goalButton.setTitle("View " + dog.name + "'s Goals", for: .normal)
+        goalButton.sizeToFit()
     }
 
     override func didReceiveMemoryWarning() {

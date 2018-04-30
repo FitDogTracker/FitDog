@@ -132,6 +132,11 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func didTapSubmit(_ sender: Any) {
         if(nameTextField.text?.isEmpty)!{
             //print error
+            let alertController = UIAlertController(title: "Error", message:
+                "Please enter your dog's name", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         else{
@@ -139,10 +144,20 @@ class DogInfoViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         if(dogImage == nil){
             //print error message
+            let alertController = UIAlertController(title: "Error", message:
+                "Please add an image", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         if(dogColor == nil){
             //print error message or pick random color
+            let alertController = UIAlertController(title: "Error", message:
+                "Please choose a color", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
             return
         }
         Dog.SaveDog(image: profileImageView.image, name: nameTextField.text, color: dogColor) { (isComplete, error) in
