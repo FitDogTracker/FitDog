@@ -38,6 +38,7 @@ class CurrentWalkViewController: UIViewController, UICollectionViewDelegate, UIC
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        foregroundProgressView.frame = CGRect(x: foregroundProgressView.frame.minX, y: foregroundProgressView.frame.minY, width:0, height: foregroundProgressView.frame.height)
         self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "#b22222ff")
         self.view.backgroundColor = UIColor(hexString: "#fffaf0ff")
         currentWalkersCollectionView.backgroundColor = UIColor(hexString: "#fffaf0ff")
