@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var completionLabel: UILabel!
     @IBOutlet weak var progressBarView: UIView!
+    @IBOutlet weak var progressBarBackgroundView: UIView!
     @IBOutlet weak var weeklyProgressLabel: UILabel!
     @IBOutlet weak var mondayView: UIView!
     @IBOutlet weak var tuesdayView: UIView!
@@ -49,6 +50,9 @@ class DetailViewController: UIViewController {
         profileImageView.clipsToBounds = true
         profileImageView.image = photoImage
         completionLabel.text = makeCompletionLabelText()
+        let frame = progressBarView.frame
+        progressBarView.frame = CGRect(x: frame.minX, y: frame.minY, width: makeProgressWidth(), height: frame.height)
+        progressBarView.backgroundColor = UIColor(hexString: dog.color + "ff")
         profileImageView.layer.borderWidth = 3
         profileImageView.layer.borderColor = UIColor(hexString: "#fffaf0ff")?.cgColor
         
@@ -72,6 +76,15 @@ class DetailViewController: UIViewController {
         var distOverGoal = distanceWalked - weeklyGoal
         distOverGoal = (distOverGoal * 100).rounded() / 100
         return distOverGoal.description + "km over goal"
+    }
+    
+    func makeProgressWidth() -> CGFloat{
+        let backgroundWidth = progressBarBackgroundView.frame.width
+        let weeklyGoal = goal.distance * 7
+        if(distanceWalked >= weeklyGoal){
+            return backgroundWidth
+        }
+        return backgroundWidth * CGFloat(distanceWalked / weeklyGoal)
     }
     
     override func didReceiveMemoryWarning() {

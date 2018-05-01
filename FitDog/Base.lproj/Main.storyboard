@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="ChalkboardSE.ttc">
-            <string>ChalkboardSE-Bold</string>
-            <string>ChalkboardSE-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Dog Info View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -368,10 +362,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="10a-wr-2hN">
-                                <rect key="frame" x="0.0" y="64" width="383" height="252"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="252"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.7 km until goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc5-3g-cPS">
-                                <rect key="frame" x="93" y="374" width="186" height="34"/>
+                                <rect key="frame" x="89" y="374" width="186" height="34"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="24"/>
                                 <color key="textColor" red="0.34255391359999998" green="0.28678029779999997" blue="0.24025326969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -520,7 +514,7 @@
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="aMB-Z3-iLO">
-                                <rect key="frame" x="86" y="154" width="200" height="200"/>
+                                <rect key="frame" x="86" y="154" width="192" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="7Xz-aP-tjs"/>
                                     <constraint firstAttribute="height" constant="200" id="mvt-T2-cYZ"/>
@@ -560,6 +554,7 @@
                         <outlet property="mondayView" destination="HCo-m1-2Kc" id="hVf-gG-PDa"/>
                         <outlet property="navigationTitle" destination="1ms-fG-Nej" id="z7c-Ef-ZRr"/>
                         <outlet property="profileImageView" destination="aMB-Z3-iLO" id="kgM-fg-aa9"/>
+                        <outlet property="progressBarBackgroundView" destination="mq5-Fe-BwG" id="fsb-aj-xR5"/>
                         <outlet property="progressBarView" destination="Nfc-Ku-dgj" id="oWu-uZ-q3h"/>
                         <outlet property="saturdayView" destination="7Ia-cS-RUs" id="6xy-w2-Fw1"/>
                         <outlet property="sundayView" destination="K6r-n7-q1P" id="Lbf-6p-buC"/>
